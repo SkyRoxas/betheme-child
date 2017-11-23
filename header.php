@@ -37,10 +37,7 @@
 <?php if( mfn_opts_get('apple-touch-icon') ): ?>
 <link rel="apple-touch-icon" href="<?php mfn_opts_show( 'apple-touch-icon' ); ?>" />
 
-<?php endif; ?>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	
+<?php endif; ?>	
 
 <!-- wp_head() -->
 <?php wp_head(); ?>
