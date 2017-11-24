@@ -17,24 +17,29 @@ get_header();
 		<div class="sections_group">
 			<div class="entry-content" itemprop="mainContentOfPage">
         <?php
-          $args = array('post_type' => 'treatment_node',);
+          $args = array(
+												'post_type' => 'treatment_node',
+												'posts_per_page' => -1
+											 );
+
           $the_query = new WP_Query( $args );
+
 					function get_field_image($field){
 						echo '<img src="'.get_field($field)['url'].'" alt="'.get_field($field)['alt'].'">';
 					}
+
         ?>
 				<div class="article-list treatment">
 					<?php $counter=0; ?>
         	<?php if ($the_query->have_posts()) : ?>
-          	<?php while ($the_query->have_posts()) : $the_query->the_post(); $counter++;?>
+          	<?php while ($the_query->have_posts()) : $the_query->the_post();?>
+
 							<?php
-								if ($counter % 2 == 0){
-									$queyClass = 'even';
-								}else {
-									$queyClass = 'odd';
-								}
-						 	?>
-							<article class="d-flex <?php echo $queyClass;?>">
+							$count++;
+	      			$even_odd_class = ( ($count % 2) == 0 ) ? "even" : "odd";
+							?>
+
+							<article class="d-flex <?php echo $even_odd_class;?>">
 								<div class="wrap col col-md-5 d-flex align-items-center" style="padding:10px 50px; box-sizing:border-box;">
 									<div>
 										<div class="d-flex align-items-end" style="margin-bottom:30px;">

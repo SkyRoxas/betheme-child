@@ -49,6 +49,10 @@
   font-size: 36px;
 }
 
+body.page-id-96 #Content {
+  padding-top: 0px;
+}
+
 .article-list.treatment img {
   display: block;
 }
