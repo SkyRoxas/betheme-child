@@ -1,3 +1,20 @@
+.doctor_list > *:not(.section-page-footer) {
+  padding: 50px;
+  overflow: hidden;
+}
+
+.doctor_list > *:not(.section-page-footer).even {
+  background-color: gray;
+}
+
+.doctor_list > *:not(.section-page-footer) .section_wrapper {
+  margin: -50px;
+}
+
+.doctor_list > *:not(.section-page-footer) .section_wrapper > * {
+  padding: 50px;
+}
+
 body.home {
   background: url("/wp-content/themes/betheme-child/images/bg-front.png") no-repeat;
 }

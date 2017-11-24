@@ -19,7 +19,7 @@ get_header();
 		<!-- .sections_group -->
 		<div class="sections_group">
 
-			<div class="entry-content" itemprop="mainContentOfPage">
+			<div class="entry-content doctor_list" itemprop="mainContentOfPage">
 
 
 
@@ -27,7 +27,7 @@ get_header();
           $args = [
 						'posts_per_page' => -1,
 						'post_type' => 'doctor',
-						'order' => 'DESC',
+						'order' => 'ASC',
 					];
           $the_query = new WP_Query( $args );
 					$count = 0;

@@ -1,0 +1,15 @@
+.doctor_list {
+  > *:not(.section-page-footer) {
+    padding: 50px;
+    overflow: hidden;
+    &.even {
+      background-color: gray;
+    }
+    .section_wrapper {
+      margin: -50px;
+      > * {
+        padding: 50px;
+      }
+    }
+  }
+}
