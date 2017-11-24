@@ -1,17 +1,30 @@
-.d-flex>.col {
-  width: 100%;
+
+
+
+.d-flex
+{
+    .col
+    {
+        width: 100%;
+    }
+    .col-md-5
+    {
+        @media screen and (min-width: 720px)
+        {
+            width: 50%;
+        }
+    }
 }
 
-@media screen and (min-width: 720px) {
-  .d-flex>.col-md-5 {
-    width: 50%;
-  }
+.article-list.treatment
+{
+    img
+    {
+        display: block;
+    }
 }
 
-.article-list.treatment img {
-  display: block;
-}
-
-.article-list article.even {
-  flex-direction: row-reverse;
+.article-list article.even
+{
+    flex-direction: row-reverse;
 }

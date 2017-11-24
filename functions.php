@@ -1,5 +1,5 @@
 <?php
-require_once 'kint.php';
+//require_once 'kint.php';
 /* ---------------------------------------------------------------------------
  * Child Theme URI | DO NOT CHANGE
  * --------------------------------------------------------------------------- */
@@ -64,3 +64,10 @@ function excerpt_length_example(){
 }
 
 add_filter( 'excerpt_length', 'excerpt_more_example' );
+
+
+function add_custom_sizes()
+{
+    add_image_size('575X420', 575, 445, array( 'center', 'center'));
+}
+add_action('after_setup_theme', 'add_custom_sizes');

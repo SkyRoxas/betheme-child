@@ -13,56 +13,49 @@ get_header();
 <!-- #Content -->
 <div id="Content">
 	<div class="content_wrapper clearfix">
-
 		<!-- .sections_group -->
 		<div class="sections_group">
-
 			<div class="entry-content" itemprop="mainContentOfPage">
-
-
-
         <?php
           $args = array('post_type' => 'treatment_node',);
           $the_query = new WP_Query( $args );
-
 					function get_field_image($field){
 						echo '<img src="'.get_field($field)['url'].'" alt="'.get_field($field)['alt'].'">';
 					}
-
         ?>
 				<div class="article-list treatment">
-
 					<?php $counter=0; ?>
-
-        <?php if ($the_query->have_posts()) : ?>
-          <?php while ($the_query->have_posts()) : $the_query->the_post(); $counter++;?>
-
-						<?php
-							if ($counter % 2 == 0):
-								$queyClass = 'odd';
-							else:
-								$queyClass = 'even';
-							endif
-						 ?>
-
+        	<?php if ($the_query->have_posts()) : ?>
+          	<?php while ($the_query->have_posts()) : $the_query->the_post(); $counter++;?>
+							<?php
+								if ($counter % 2 == 0){
+									$queyClass = 'odd';
+								}else {
+									$queyClass = 'even';
+								}
+						 	?>
 							<article class="d-flex <?php echo $queyClass;?>">
-
 								<div class="wrap col col-md-5 d-flex align-items-center" style="padding:10px 50px; box-sizing:border-box;">
 									<div>
 										<div class="d-flex align-items-end">
-											<?php get_field_image('icon_list'); ?>
-											<h3><?php the_title(); ?></h3>
+											<a href="<?php the_permalink();?>">
+												<?php get_field_image('icon_list'); ?>
+											</a>
+											<h3>
+												<a href="<?php the_permalink();?>">
+                					<?php the_title(); ?>
+              					</a>
+											</h3>
 										</div>
 										<?php the_excerpt();?>
 									</div>
 								</div>
-
 								<div class="wrap col col-md-5">
-									<img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="">
+									<a href="<?php the_permalink();?>">
+										<?php the_post_thumbnail('575X420'); ?>
+									</a>
 								</div>
-
 							</article>
-
           <?php endwhile; ?>
         <?php else: ?>
             <?php //No units for projects in this region ?>

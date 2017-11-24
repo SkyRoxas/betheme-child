@@ -13,9 +13,9 @@
 }
 
 .align-items-end {
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: end;
+  -webkit-box-align: flex-end;
+  -ms-flex-align: flex-end;
+  align-items: flex-end;
 }
 
 .doctor_list > *:not(.section-page-footer) {
@@ -35,12 +35,12 @@
   padding: 50px;
 }
 
-.d-flex > .col {
+.d-flex .col {
   width: 100%;
 }
 
 @media screen and (min-width: 720px) {
-  .d-flex > .col-md-5 {
+  .d-flex .col-md-5 {
     width: 50%;
   }
 }
