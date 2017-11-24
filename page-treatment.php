@@ -30,32 +30,44 @@ get_header();
 					}
 
         ?>
+				<div class="article-list treatment">
+
+					<?php $counter=0; ?>
 
         <?php if ($the_query->have_posts()) : ?>
-          <?php while ($the_query->have_posts()) : $the_query->the_post();?>
+          <?php while ($the_query->have_posts()) : $the_query->the_post(); $counter++;?>
 
-            <article class="d-flex" >
+						<?php
+							if ($counter % 2 == 0):
+								$queyClass = 'odd';
+							else:
+								$queyClass = 'even';
+							endif
+						 ?>
 
-							<div class="wrap col-6">
-								<?php get_field_image('icon_list'); ?>
+							<article class="d-flex <?php echo $queyClass;?>">
 
-								<?php the_title(); ?>
+								<div class="wrap col col-md-5 d-flex align-items-center" style="padding:10px 50px; box-sizing:border-box;">
+									<div>
+										<div class="d-flex align-items-end">
+											<?php get_field_image('icon_list'); ?>
+											<h3><?php the_title(); ?></h3>
+										</div>
+										<?php the_excerpt();?>
+									</div>
+								</div>
 
-								<?php the_excerpt();?>
-							</div>
+								<div class="wrap col col-md-5">
+									<img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="">
+								</div>
 
-							<div class="wrap col-6">
-								<img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="">
-							</div>
-
-            </article>
-
-            <!-- https://www.advancedcustomfields.com/resources/image/ -->
+							</article>
 
           <?php endwhile; ?>
         <?php else: ?>
             <?php //No units for projects in this region ?>
         <?php endif; ?>
+					</div>
 
 				<div class="section section-page-footer">
 					<div class="section_wrapper clearfix">

@@ -1,19 +1,57 @@
-body.home{
+body.home {
   background: url('/wp-content/themes/betheme-child/images/bg-front.png')no-repeat;
 }
 
-body{
-  background-color: #DDD7CE!important;
+body {
+  background-color: #ddd7ce!important;
 }
 
-#Wrapper{
-  background-color: rgba(0,0,0,0)!important;
+#Wrapper {
+  background-color: rgba(0, 0, 0, 0)!important;
 }
 
-#Header_wrapper{
-  background-color: rgba(0,0,0,0)!important;
+#Header_wrapper {
+  background-color: rgba(0, 0, 0, 0)!important;
 }
 
-#Top_bar{
+#Top_bar {
   background: #fff!important;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.align-items-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.align-items-end{
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: end;
+}
+
+.d-flex>.col {
+  width: 100%;
+}
+
+@media screen and (min-width: 720px) {
+  .d-flex>.col-md-5 {
+    width: 50%;
+  }
+}
+
+.article-list.treatment img {
+  display: block;
+}
+
+.article-list article.even {
+  flex-direction: row-reverse;
 }
