@@ -24,15 +24,19 @@
 }
 
 .doctor_list > *:not(.section-page-footer).even {
-  background-color: gray;
+  background-color: #ECECEC;
 }
 
 .doctor_list > *:not(.section-page-footer) .section_wrapper {
-  margin: -50px;
+  margin: -20px -50px;
 }
 
 .doctor_list > *:not(.section-page-footer) .section_wrapper > * {
-  padding: 50px;
+  padding: 20px 50px;
+}
+
+.doctor_list > *:not(.section-page-footer) .section_wrapper > * .title_wrapper h2 {
+  font-size: 36px;
 }
 
 .d-flex > .col {
