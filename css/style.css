@@ -1,19 +1,19 @@
-body.home{
-  background: url('/wp-content/themes/betheme-child/images/bg-front.png')no-repeat;
+body.home {
+  background: url("/wp-content/themes/betheme-child/images/bg-front.png") no-repeat;
 }
 
-body{
-  background-color: #DDD7CE!important;
+body {
+  background-color: #DDD7CE !important;
 }
 
-#Wrapper{
-  background-color: rgba(0,0,0,0)!important;
+#Wrapper {
+  background-color: transparent !important;
 }
 
-#Header_wrapper{
-  background-color: rgba(0,0,0,0)!important;
+#Header_wrapper {
+  background-color: transparent !important;
 }
 
-#Top_bar{
-  background: #fff!important;
+#Top_bar {
+  background: #fff !important;
 }

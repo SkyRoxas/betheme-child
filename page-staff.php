@@ -6,7 +6,9 @@
  * @author Muffin group
  * @link http://muffingroup.com
  */
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+require 'kint.php';
 get_header();
 ?>
 
@@ -22,13 +24,23 @@ get_header();
 
 
         <?php
-          $args = array('post_type' => 'doctor');
+          $args = [
+						'posts_per_page' => -1,
+						'post_type' => 'doctor',
+						'order' => 'DESC',
+					];
           $the_query = new WP_Query( $args );
+					$count = 0;
         ?>
 
         <?php if ($the_query->have_posts()) : ?>
           <?php while ($the_query->have_posts()) : $the_query->the_post();?>
-						<div class="section mcb-section">
+						<?php
+						$count++;
+      			$even_odd_class = ( ($count % 2) == 0 ) ? "even" : "odd";
+						?>
+
+						<div class="section mcb-section <?php print $even_odd_class?> ">
 							<div class="section_wrapper mcb-section-inner">
 								<div class="wrap mcb-wrap one-third  valign-top clearfix">
 									<div class="mcb-wrap-inner">
