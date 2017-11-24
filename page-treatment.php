@@ -24,15 +24,32 @@ get_header();
         <?php
           $args = array('post_type' => 'treatment_node',);
           $the_query = new WP_Query( $args );
+
+					function get_field_image($field){
+						echo '<img src="'.get_field($field)['url'].'" alt="'.get_field($field)['alt'].'">';
+					}
+
         ?>
 
         <?php if ($the_query->have_posts()) : ?>
           <?php while ($the_query->have_posts()) : $the_query->the_post();?>
 
-            <?php the_title(); ?>
+            <article class="d-flex" >
 
-            <?php $image = get_field('icon_list'); ?>
-            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+							<div class="wrap col-6">
+								<?php get_field_image('icon_list'); ?>
+
+								<?php the_title(); ?>
+
+								<?php the_excerpt();?>
+							</div>
+
+							<div class="wrap col-6">
+								<img src="<?php echo get_the_post_thumbnail_url($post->ID); ?>" alt="">
+							</div>
+
+            </article>
+
             <!-- https://www.advancedcustomfields.com/resources/image/ -->
 
           <?php endwhile; ?>
