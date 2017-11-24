@@ -1,0 +1,24 @@
+@import "layout/flex";
+
+@import "component/doctor_list";
+@import "component/treatment_list";
+
+body.home{
+  background: url('/wp-content/themes/betheme-child/images/bg-front.png')no-repeat;
+}
+
+body{
+  background-color: #DDD7CE!important;
+}
+
+#Wrapper{
+  background-color: rgba(0,0,0,0)!important;
+}
+
+#Header_wrapper{
+  background-color: rgba(0,0,0,0)!important;
+}
+
+#Top_bar{
+  background: #fff!important;
+}

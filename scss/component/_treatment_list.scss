@@ -1,0 +1,17 @@
+.d-flex>.col {
+  width: 100%;
+}
+
+@media screen and (min-width: 720px) {
+  .d-flex>.col-md-5 {
+    width: 50%;
+  }
+}
+
+.article-list.treatment img {
+  display: block;
+}
+
+.article-list article.even {
+  flex-direction: row-reverse;
+}
