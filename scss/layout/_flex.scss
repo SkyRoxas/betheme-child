@@ -17,3 +17,16 @@
   -ms-flex-align: flex-end;
   align-items: flex-end;
 }
+
+
+.d-flex {
+  .col {
+    width: 100%;
+  }
+
+  .col-md-5 {
+    @media screen and (min-width: 720px) {
+      width: 50%;
+    }
+  }
+}

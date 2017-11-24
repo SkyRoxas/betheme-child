@@ -29,15 +29,15 @@ get_header();
           	<?php while ($the_query->have_posts()) : $the_query->the_post(); $counter++;?>
 							<?php
 								if ($counter % 2 == 0){
-									$queyClass = 'odd';
-								}else {
 									$queyClass = 'even';
+								}else {
+									$queyClass = 'odd';
 								}
 						 	?>
 							<article class="d-flex <?php echo $queyClass;?>">
 								<div class="wrap col col-md-5 d-flex align-items-center" style="padding:10px 50px; box-sizing:border-box;">
 									<div>
-										<div class="d-flex align-items-end">
+										<div class="d-flex align-items-end" style="margin-bottom:30px;">
 											<a href="<?php the_permalink();?>">
 												<?php get_field_image('icon_list'); ?>
 											</a>
@@ -47,7 +47,12 @@ get_header();
               					</a>
 											</h3>
 										</div>
-										<?php the_excerpt();?>
+										<div style="margin-bottom:15px;">
+											<?php the_excerpt();?>
+										</div>
+										<div>
+											<a class="more-link" href="<?php print $post_link ?>"><h5>瞭解更多</h5></a>
+										</div>
 									</div>
 								</div>
 								<div class="wrap col col-md-5">

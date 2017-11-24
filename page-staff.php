@@ -65,7 +65,7 @@ get_header();
 												$post_id = get_the_ID();
 												$post_link = get_permalink($post_id);
 											?>
-											<a class="more" href="<?php print $post_link ?>">瞭解更多</a>
+											<a class="more-link" href="<?php print $post_link ?>">瞭解更多</a>
 										</div>
 									</div>
 								</div>

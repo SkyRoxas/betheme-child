@@ -18,6 +18,16 @@
   align-items: flex-end;
 }
 
+.d-flex .col {
+  width: 100%;
+}
+
+@media screen and (min-width: 720px) {
+  .d-flex .col-md-5 {
+    width: 50%;
+  }
+}
+
 .doctor_list > *:not(.section-page-footer) {
   padding: 50px;
   overflow: hidden;
@@ -39,22 +49,41 @@
   font-size: 36px;
 }
 
-.d-flex .col {
-  width: 100%;
-}
-
-@media screen and (min-width: 720px) {
-  .d-flex .col-md-5 {
-    width: 50%;
-  }
-}
-
 .article-list.treatment img {
   display: block;
 }
 
-.article-list article.even {
+.article-list.treatment article h3,
+.article-list.treatment article h5, .article-list.treatment article a {
+  color: inherit;
+  margin: 0;
+}
+
+.article-list.treatment article.odd {
+  color: #fff;
+  border-color: #fff;
+  background: #387e39;
+}
+
+.article-list.treatment article.even {
+  color: #6f6f6f;
+  border-color: #6f6f6f;
+  background: #ececec;
   flex-direction: row-reverse;
+}
+
+.article-list.treatment article:last-child {
+  color: #fff;
+  border-color: #fff;
+  background: #6DA56F;
+}
+
+.article-list.treatment a.more-link {
+  display: block;
+  border: 1px solid;
+  padding: 10px 0px;
+  width: 160px;
+  text-align: center;
 }
 
 body.home {
