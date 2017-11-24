@@ -37,7 +37,7 @@
 <?php if( mfn_opts_get('apple-touch-icon') ): ?>
 <link rel="apple-touch-icon" href="<?php mfn_opts_show( 'apple-touch-icon' ); ?>" />
 
-<?php endif; ?>	
+<?php endif; ?>
 
 <!-- wp_head() -->
 <?php wp_head(); ?>
