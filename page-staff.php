@@ -42,42 +42,30 @@ get_header();
 						<div class="section mcb-section <?php print $even_odd_class?> ">
 							<div class="section_wrapper mcb-section-inner">
 								<div class="wrap mcb-wrap one-third  valign-top clearfix">
-									<div class="mcb-wrap-inner">
-										<div class="column mcb-column one column_image ">
-											<div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
-												<div class="image_wrapper">
-													<?php $image = get_field('image'); ?>
-							            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-												</div>
-											</div>
-										</div>
+									<div class="image_wrapper">
+										<?php $image = get_field('image'); ?>
+										<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 									</div>
 								</div>
 
 								<div class="wrap mcb-wrap two-third  valign-top clearfix">
 									<div class="mcb-wrap-inner">
-										<div class="column mcb-column one column_column  column-margin-20px">
-											<div class="column_attr clearfix">
-												<h2 class="title"> <?php the_title(); ?> 醫師</h2>
-											</div>
+										<div class="title_wrapper">
+											<h2 class="title"> <?php the_title(); ?> 醫師</h2>
 										</div>
-										<div class="column mcb-column one column_column  column-margin-20px">
-											<div class="column_attr clearfix">
-												<?php $education = get_field('education'); ?>
-												<?php print $education ?>
-											</div>
+										<div class="education_wrapper">
+											<?php $education = get_field('education'); ?>
+											<?php print $education ?>
 										</div>
-										<div class="column mcb-column one column_column  column-margin-20px">
-											<div class="column_attr clearfix">
-												<?php the_content(); ?>
-												<div class="read_more">
-													<?php
-														$post_id = get_the_ID();
-														$post_link = get_permalink($post_id);
-													?>
-													<a class="more" href="<?php print $post_link ?>">瞭解更多</a>
-												</div>
-											</div>
+										<div class="body_wrapper">
+											<?php the_content(); ?>
+										</div>
+										<div class="read_more">
+											<?php
+												$post_id = get_the_ID();
+												$post_link = get_permalink($post_id);
+											?>
+											<a class="more" href="<?php print $post_link ?>">瞭解更多</a>
 										</div>
 									</div>
 								</div>
