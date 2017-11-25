@@ -8447,7 +8447,7 @@ body.single-doctor .visible-print-inline-block, body.post-type-archive-tribe_eve
   }
 }
 
-body:not(.home) #Content {
+body:not(.home):not(.page-id-9):not(.page-id-13) #Content {
   background-image: url("/wp-content/themes/betheme-child/images/bg-01.png");
   background-color: #fff;
   background-repeat: no-repeat;
