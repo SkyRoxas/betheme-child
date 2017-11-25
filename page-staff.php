@@ -43,8 +43,9 @@ get_header();
 							<div class="section_wrapper mcb-section-inner">
 								<div class="wrap mcb-wrap one-third  valign-top clearfix">
 									<div class="image_wrapper">
-										<?php $image = get_field('image'); ?>
-										<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+										<a href="<?php the_permalink();?>">
+											<?php the_post_thumbnail('342X368'); ?>
+										</a>
 									</div>
 								</div>
 
@@ -61,11 +62,9 @@ get_header();
 											<?php the_content(); ?>
 										</div>
 										<div class="read_more">
-											<?php
-												$post_id = get_the_ID();
-												$post_link = get_permalink($post_id);
-											?>
-											<a class="more-link" href="<?php print $post_link ?>">瞭解更多</a>
+											<a class="more-link" href="<?php get_permalink() ?>">
+												瞭解更多
+											</a>
 										</div>
 									</div>
 								</div>

@@ -8,11 +8,34 @@
     .section_wrapper {
       margin: -20px -50px;
       color: #575756;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0px !important;
 
       > * {
+        &.one-third {
+          width: 100%;
+          flex-basis: 100%;
+          max-width: 100%;
+          @media(min-width: 960px) {
+            flex-basis: 40%;
+            max-width: 40%;
+          }
+        }
+        &.two-third {
+          width: 100%;
+          flex-basis: 100%;
+          max-width: 100%;
+          @media(min-width: 960px) {
+            flex-basis: 60%;
+            max-width: 60%;
+          }
+        }
         padding: 20px 50px;
 
         .title_wrapper {
+          margin-top: 10px;
+
           &::after {
             content: "";
             background-color: #387E39;
@@ -25,6 +48,7 @@
             font-size: 36px;
             line-height: 36px;
             margin: 0px;
+            color: #575756;
           }
         }
 

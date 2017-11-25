@@ -73,3 +73,5 @@ function add_custom_sizes()
     add_image_size('575X420', 575, 445, array( 'center', 'center'));
 }
 add_action('after_setup_theme', 'add_custom_sizes');
+
+add_image_size('342X368', 342, 368 , array( 'center', 'center'));
