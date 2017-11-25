@@ -8179,14 +8179,71 @@ body.single-doctor .visible-print-inline-block {
 
 .doctor_list > *:not(.section-page-footer) .section_wrapper {
   margin: -20px -50px;
+  color: #575756;
 }
 
 .doctor_list > *:not(.section-page-footer) .section_wrapper > * {
   padding: 20px 50px;
 }
 
+.doctor_list > *:not(.section-page-footer) .section_wrapper > * .title_wrapper::after {
+  content: "";
+  background-color: #387E39;
+  width: 37px;
+  height: 4px;
+  display: block;
+  margin: 20px 0px;
+}
+
 .doctor_list > *:not(.section-page-footer) .section_wrapper > * .title_wrapper h2 {
   font-size: 36px;
+  line-height: 36px;
+  margin: 0px;
+}
+
+.doctor_list > *:not(.section-page-footer) .section_wrapper > * .education_wrapper ul > li {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.doctor_list > *:not(.section-page-footer) .section_wrapper > * .body_wrapper::before {
+  content: "";
+  background-color: #387E39;
+  width: 37px;
+  height: 4px;
+  display: block;
+  margin: 20px 0px;
+}
+
+.doctor_list > *:not(.section-page-footer) .section_wrapper > * .body_wrapper p {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.doctor_list > *:not(.section-page-footer) .section_wrapper > * .body_wrapper p:first-child {
+  margin-top: 0px;
+}
+
+.doctor_list > *:not(.section-page-footer) .section_wrapper > * .body_wrapper p:last-child {
+  margin-bottom: 0px;
+}
+
+.doctor_list > *:not(.section-page-footer) .section_wrapper > * .read_more {
+  margin-top: 20px;
+}
+
+.doctor_list > *:not(.section-page-footer) .section_wrapper > * .read_more a {
+  font-size: 18px;
+  line-height: 18px;
+  display: inline-block;
+  padding: 15px 45px;
+  border: 1px solid #6F6F6E;
+  color: #868686;
+  text-decoration: none;
+}
+
+.doctor_list > *:not(.section-page-footer) .section_wrapper > * .read_more a:hover {
+  opacity: 0.8;
 }
 
 body.page-id-96 #Content {
