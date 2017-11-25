@@ -8466,10 +8466,43 @@ body:not(.home) #Content {
 .doctor_list > *:not(.section-page-footer) .section_wrapper {
   margin: -20px -50px;
   color: #575756;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px !important;
 }
 
 .doctor_list > *:not(.section-page-footer) .section_wrapper > * {
   padding: 20px 50px;
+}
+
+.doctor_list > *:not(.section-page-footer) .section_wrapper > *.one-third {
+  width: 100%;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 960px) {
+  .doctor_list > *:not(.section-page-footer) .section_wrapper > *.one-third {
+    flex-basis: 40%;
+    max-width: 40%;
+  }
+}
+
+.doctor_list > *:not(.section-page-footer) .section_wrapper > *.two-third {
+  width: 100%;
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 960px) {
+  .doctor_list > *:not(.section-page-footer) .section_wrapper > *.two-third {
+    flex-basis: 60%;
+    max-width: 60%;
+  }
+}
+
+.doctor_list > *:not(.section-page-footer) .section_wrapper > * .title_wrapper {
+  margin-top: 10px;
 }
 
 .doctor_list > *:not(.section-page-footer) .section_wrapper > * .title_wrapper::after {
@@ -8485,6 +8518,7 @@ body:not(.home) #Content {
   font-size: 36px;
   line-height: 36px;
   margin: 0px;
+  color: #575756;
 }
 
 .doctor_list > *:not(.section-page-footer) .section_wrapper > * .education_wrapper ul > li {
