@@ -1,6 +1,6 @@
 @import "layout/flex";
 
-body.single-doctor{
+body.single-doctor,body.post-type-archive-tribe_events{
   @import "vendors/bootstrap/bootstrap";
 }
 
