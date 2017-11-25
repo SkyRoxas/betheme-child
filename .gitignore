@@ -1,3 +1,4 @@
 node_modules/
 /webpack.mix.js
 kint.php
+.DS_Store
