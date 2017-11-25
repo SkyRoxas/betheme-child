@@ -1,5 +1,9 @@
 @import "layout/flex";
 
+body.single-doctor{
+  @import "vendors/bootstrap/bootstrap";
+}
+
 @import "component/doctor_list";
 @import "component/treatment_list";
 
