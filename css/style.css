@@ -8447,6 +8447,13 @@ body.single-doctor .visible-print-inline-block, body.post-type-archive-tribe_eve
   }
 }
 
+body:not(.home) #Content {
+  background-image: url("/wp-content/themes/betheme-child/images/bg-01.png");
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
 .doctor_list > *:not(.section-page-footer) {
   padding: 50px;
   overflow: hidden;
@@ -8566,6 +8573,14 @@ body.page-id-96 #Content {
   text-align: center;
 }
 
+body.post-type-archive-tribe_events .tribe-events-event-image {
+  border: 0px;
+}
+
+body.post-type-archive-tribe_events a.tribe-event-url {
+  color: #387E39;
+}
+
 body.home {
   background: url("/wp-content/themes/betheme-child/images/bg-front.png") no-repeat;
 }
@@ -8584,4 +8599,21 @@ body {
 
 #Top_bar {
   background: #fff !important;
+}
+
+#footer-top {
+  background: #418D45;
+  padding: 40px 20px;
+}
+
+#footer-top a {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 15px;
+  box-sizing: border-box;
+  display: block;
+  max-width: 310px;
+  margin: 0 auto;
+  white-space: nowrap;
+  text-align: center;
 }
