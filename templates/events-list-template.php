@@ -60,7 +60,7 @@ get_header();
 
 		<!-- .four-columns - sidebar -->
 		<?php get_sidebar(); ?>
-
+		<?php dynamic_sidebar( 'sidebar-firstsidebar' ); ?>
 	</div>
 </div>
 
