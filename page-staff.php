@@ -52,7 +52,9 @@ get_header();
 								<div class="wrap mcb-wrap two-third  valign-top clearfix">
 									<div class="mcb-wrap-inner">
 										<div class="title_wrapper">
-											<h2 class="title"> <?php the_title(); ?> 醫師</h2>
+											<a href="<?php the_permalink();?>">
+												<h2 class="title"> <?php the_title(); ?> 醫師</h2>
+											</a>
 										</div>
 										<div class="education_wrapper">
 											<?php $education = get_field('education'); ?>
@@ -62,7 +64,7 @@ get_header();
 											<?php the_content(); ?>
 										</div>
 										<div class="read_more">
-											<a class="more-link" href="<?php get_permalink() ?>">
+											<a class="more-link" href="<?php the_permalink() ?>">
 												瞭解更多
 											</a>
 										</div>
