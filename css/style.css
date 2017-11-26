@@ -8581,16 +8581,16 @@ body.page-id-96 #Content {
 }
 
 .article-list.treatment article.odd {
-  color: #6f6f6f;
-  border-color: #6f6f6f;
-  background: #ececec;
+  color: #fff;
+  border-color: #fff;
+  background: #387e39;
   flex-direction: row-reverse;
 }
 
 .article-list.treatment article.even {
-  color: #fff;
-  border-color: #fff;
-  background: #387e39;
+  color: #6f6f6f;
+  border-color: #6f6f6f;
+  background: #ececec;
 }
 
 .article-list.treatment article:last-child {
