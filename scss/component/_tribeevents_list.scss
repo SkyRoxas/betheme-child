@@ -1,8 +1,43 @@
-body.post-type-archive-tribe_events{
-  .tribe-events-event-image{
-    border: 0px;
+body.post-type-archive-tribe_events {
+  .tribe-events-event-image {
+    border: 0;
   }
-  a.tribe-event-url{
-    color:#387E39;
+
+  a.tribe-event-url {
+    color: #387E39;
+  }
+
+  #Content {
+    padding-top: 0;
+
+    .the_content {
+      padding: 0;
+    }
+
+    .sidebar {
+      .widget-area {
+        &:before {
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+body.tribe_events-template-default.single {
+  #Content {
+    padding-top: 0;
+
+    .the_content {
+      padding: 0;
+    }
+
+    .sidebar {
+      .widget-area {
+        &:before {
+          left: 0;
+        }
+      }
+    }
   }
 }

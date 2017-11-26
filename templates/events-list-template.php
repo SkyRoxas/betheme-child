@@ -8,8 +8,8 @@ get_header();
 ?>
 
 <!-- #Content -->
-<div id="Content">
-	<div class="content_wrapper clearfix">
+<div id="Content" class="with_aside">
+	<div class="content_wrapper clearfix" style="padding:0px 30px;">
 
 		<!-- .sections_group -->
 		<div class="sections_group">
@@ -59,8 +59,11 @@ get_header();
 		</div>
 
 		<!-- .four-columns - sidebar -->
-		<?php get_sidebar(); ?>
-		<?php dynamic_sidebar( 'sidebar-firstsidebar' ); ?>
+		<div class="sidebar sidebar-1 four columns">
+			<div class="widget-area clearfix">
+				<?php dynamic_sidebar( 'sidebar-firstsidebar' ); ?>
+			</div>
+		</div>
 	</div>
 </div>
 
