@@ -1,6 +1,6 @@
 .doctor_list {
   > *:not(.section-page-footer) {
-    padding: 50px;
+    padding: 50px !important;
     overflow: hidden;
     &.even {
       background-color: #ECECEC;
@@ -93,7 +93,7 @@
             line-height: 18px;
             display: inline-block;
             padding: 15px 45px;
-            border: 1px solid #6F6F6E;
+            border: 2px solid #6F6F6E;
             color: #868686;
             text-decoration: none;
             &:hover {

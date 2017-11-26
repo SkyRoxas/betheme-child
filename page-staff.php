@@ -62,7 +62,7 @@ get_header();
 											<?php the_content(); ?>
 										</div>
 										<div class="read_more">
-											<a class="more-link" href="<?php get_permalink() ?>">
+											<a class="more-link" href="<?php the_permalink() ?>">
 												瞭解更多
 											</a>
 										</div>
