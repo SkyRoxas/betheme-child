@@ -1,0 +1,12 @@
+//page-id-9 關於診所
+//page-id-13 醫師列表
+//
+
+body:not(.home,.page-id-9,.page-id-13){
+  #Content{
+    background-image: url('/wp-content/themes/betheme-child/images/bg-01.png');
+    background-color: #fff;
+    background-repeat:no-repeat;
+    background-position: left top;
+  }
+}

@@ -71,7 +71,22 @@ add_filter( 'excerpt_length', 'excerpt_more_example' );
 function add_custom_sizes()
 {
     add_image_size('575X420', 575, 445, array( 'center', 'center'));
+	add_image_size('342X368', 342, 368 , array( 'center', 'center'));
 }
 add_action('after_setup_theme', 'add_custom_sizes');
 
-add_image_size('342X368', 342, 368 , array( 'center', 'center'));
+/**
+ * Hides the custom post template for pages on WordPress 4.6 and older
+ *
+ * @param array $post_templates Array of page templates. Keys are filenames, values are translated names.
+ * @return array Filtered array of page templates.
+ */
+function bonze_page_templates( $post_templates ) {
+    if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
+        unset( $post_templates['templates/events-list-template.php'] );
+    }
+
+    return $post_templates;
+}
+
+add_filter( 'theme_page_templates', 'bonze_page_templates' );

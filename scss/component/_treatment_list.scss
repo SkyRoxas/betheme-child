@@ -24,13 +24,13 @@ body.page-id-96{
     color: #fff;
     border-color:#fff;
     background: #387e39;
+    flex-direction: row-reverse;
   }
 
-  article.even {
+  article.even {  
     color: #6f6f6f;
     border-color:#6f6f6f;
     background: #ececec;
-    flex-direction: row-reverse;
   }
   article:last-child{
     color: #fff;

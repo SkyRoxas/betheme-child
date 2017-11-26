@@ -30,76 +30,81 @@ $organizer = tribe_get_organizer();
 
 ?>
 
-<!-- Event Title -->
-<?php do_action( 'tribe_events_before_the_event_title' ) ?>
-<h2 class="tribe-events-list-event-title">
-	<a class="tribe-event-url" href="<?php echo esc_url( tribe_get_event_link() ); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">
-		<?php the_title() ?>
-	</a>
-</h2>
-<?php do_action( 'tribe_events_after_the_event_title' ) ?>
+<div class="mb-5">
+	<!-- Event Title -->
+	<?php do_action( 'tribe_events_before_the_event_title' ) ?>
+	<h3 class="tribe-events-list-event-title">
+		<a class="tribe-event-url" href="<?php echo esc_url( tribe_get_event_link() ); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">
+			<?php the_title() ?>
+		</a>
+	</h3>
+	<?php do_action( 'tribe_events_after_the_event_title' ) ?>
 
-<!-- Event Meta -->
-<?php do_action( 'tribe_events_before_the_meta' ) ?>
-<div class="tribe-events-event-meta">
-	<div class="author <?php echo esc_attr( $has_venue_address ); ?>">
+	<!-- Event Meta -->
+	<?php do_action( 'tribe_events_before_the_meta' ) ?>
+	<div> <!--class tribe-events-event-meta-->
+		<div class="author <?php echo esc_attr( $has_venue_address ); ?>">
 
-		<!-- Schedule & Recurrence Details -->
-		<div class="tribe-event-schedule-details">
-			<?php echo tribe_events_event_schedule_details() ?>
-		</div>
-
-		<!-- location -->
-		<?php if ( $venue_name ) : ?>
-			<div class="address-location">
-				<div class="label">地點：</div><div class="location"><?php echo $venue_details['linked_name']; ?></div>
+			<!-- Schedule & Recurrence Details -->
+			<div class="tribe-event-schedule-details">
+				<?php echo tribe_events_event_schedule_details() ?>
 			</div>
-		<?php endif; ?>
 
-		<?php if ( $venue_details ) : ?>
-			<!-- Venue Display Info -->
-			<div class="tribe-events-venue-details">
+			<!-- location -->
+			<?php if ( $venue_name ) : ?>
+				<div class="address-location">
+					<span class="label">地點：</span><span class="location"><?php echo $venue_details['linked_name']; ?></span>
+				</div>
+			<?php endif; ?>
+
+			<?php if ( $venue_details ) : ?>
+				<!-- Venue Display Info -->
+				<div class="tribe-events-venue-details">
+				<?php
+					// $address_delimiter = empty( $venue_address ) ? ' ' : ', ';
+	                //
+					// // These details are already escaped in various ways earlier in the process.
+					// echo implode( $address_delimiter, $venue_details );
+	                //
+					// if ( tribe_show_google_map_link() ) {
+					// 	echo tribe_get_map_link_html();
+					// }
+				?>
+				</div> <!-- .tribe-events-venue-details -->
+			<?php endif; ?>
+
+		</div>
+	</div><!-- .tribe-events-event-meta -->
+
+	<!-- Event Cost -->
+	<!-- <?php if ( tribe_get_cost() ) : ?>
+		<div class="tribe-events-event-cost">
+			<span class="ticket-cost"><?php echo tribe_get_cost( null, true ); ?></span>
 			<?php
-				// $address_delimiter = empty( $venue_address ) ? ' ' : ', ';
-                //
-				// // These details are already escaped in various ways earlier in the process.
-				// echo implode( $address_delimiter, $venue_details );
-                //
-				// if ( tribe_show_google_map_link() ) {
-				// 	echo tribe_get_map_link_html();
-				// }
+			/**
+			 * Runs after cost is displayed in list style views
+			 *
+			 * @since 4.5
+			 */
+			do_action( 'tribe_events_inside_cost' )
 			?>
-			</div> <!-- .tribe-events-venue-details -->
-		<?php endif; ?>
+		</div>
+	<?php endif; ?> -->
 
-	</div>
-</div><!-- .tribe-events-event-meta -->
+	<?php do_action( 'tribe_events_after_the_meta' ) ?>
 
-<!-- Event Cost -->
-<!-- <?php if ( tribe_get_cost() ) : ?>
-	<div class="tribe-events-event-cost">
-		<span class="ticket-cost"><?php echo tribe_get_cost( null, true ); ?></span>
-		<?php
-		/**
-		 * Runs after cost is displayed in list style views
-		 *
-		 * @since 4.5
-		 */
-		do_action( 'tribe_events_inside_cost' )
-		?>
-	</div>
-<?php endif; ?> -->
+	<!-- Event Image -->
+	<?php echo tribe_event_featured_image( null, 'medium' ); ?>
 
-<?php do_action( 'tribe_events_after_the_meta' ) ?>
+	<!-- Event Content -->
+	<?php do_action( 'tribe_events_before_the_content' ); ?>
+	<div class="tribe-events-list-event-description tribe-events-content description entry-summary">
+		<?php echo tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ) ); ?>
+		<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more" rel="bookmark"><?php esc_html_e( '了解更多', 'the-events-calendar' ) ?></a>
+	</div><!-- .tribe-events-list-event-description -->
+	<?php
+	do_action( 'tribe_events_after_the_content' );
+	?>
+</div>
 
-<!-- Event Image -->
-<?php echo tribe_event_featured_image( null, 'medium' ); ?>
-
-<!-- Event Content -->
-<?php do_action( 'tribe_events_before_the_content' ); ?>
-<div class="tribe-events-list-event-description tribe-events-content description entry-summary">
-	<?php echo tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ) ); ?>
-	<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more" rel="bookmark"><?php esc_html_e( '了解更多', 'the-events-calendar' ) ?></a>
-</div><!-- .tribe-events-list-event-description -->
-<?php
-do_action( 'tribe_events_after_the_content' );
+<hr>
