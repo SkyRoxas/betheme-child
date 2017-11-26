@@ -20,6 +20,7 @@ get_header();
           $args = array(
 												'post_type' => 'treatment_node',
 												'posts_per_page' => -1,
+												'orderby' => 'date',
 												'order'   => 'ASC',
 											 );
 
