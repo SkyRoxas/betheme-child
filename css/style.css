@@ -8662,17 +8662,3 @@ body {
   white-space: nowrap;
   text-align: center;
 }
-
-.section.mcb-section {
-  color: #fff;
-  font-size: 18px;
-}
-
-.section.mcb-section .section_wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.section.mcb-section .section_wrapper .wrap:last-child {
-  align-items: center;
-}
