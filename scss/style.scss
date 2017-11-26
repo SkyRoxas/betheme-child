@@ -9,6 +9,7 @@ body.single-doctor,body.post-type-archive-tribe_events{
 @import "component/doctor_list";
 @import "component/treatment_list";
 @import "component/tribeevents_list";
+@import "component/event_list";
 
 body.home{
   background: url('/wp-content/themes/betheme-child/images/bg-front.png')no-repeat;
@@ -54,15 +55,19 @@ body{
   }
 }
 
-// .section.mcb-section{
-//   color: #fff;
-//   font-size: 18px;
-//   .section_wrapper{
-//     display: flex;
-//     flex-wrap: wrap;
-//     .wrap:last-child{
-//       display: flex;
-//       align-items: center;
-//     }
-//   }
-// }
+body.home{
+  .section.mcb-section{
+    .section_wrapper{
+      display: flex;
+      flex-wrap: wrap;
+      .wrap:last-child{
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+#custom_post_widget-141{
+  color: #fff;
+  font-size: 18px;
+}
