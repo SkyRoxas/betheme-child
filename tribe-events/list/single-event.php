@@ -30,10 +30,10 @@ $organizer = tribe_get_organizer();
 
 ?>
 
-<div class="mb-5">
+<div class="my-4">
 	<!-- Event Title -->
 	<?php do_action( 'tribe_events_before_the_event_title' ) ?>
-	<h3 class="tribe-events-list-event-title">
+	<h3 class="tribe-events-list-event-title mb-2">
 		<a class="tribe-event-url" href="<?php echo esc_url( tribe_get_event_link() ); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">
 			<?php the_title() ?>
 		</a>
@@ -46,7 +46,7 @@ $organizer = tribe_get_organizer();
 		<div class="author <?php echo esc_attr( $has_venue_address ); ?>">
 
 			<!-- Schedule & Recurrence Details -->
-			<div class="tribe-event-schedule-details">
+			<div class="tribe-event-schedule-details mb-2">
 				<?php echo tribe_events_event_schedule_details() ?>
 			</div>
 
@@ -94,14 +94,21 @@ $organizer = tribe_get_organizer();
 	<?php do_action( 'tribe_events_after_the_meta' ) ?>
 
 	<!-- Event Image -->
-	<?php echo tribe_event_featured_image( null, 'medium' ); ?>
+	<div class="my-4">
+		<?php echo tribe_event_featured_image( null, 'medium' ); ?>
+	</div>
 
 	<!-- Event Content -->
 	<?php do_action( 'tribe_events_before_the_content' ); ?>
 	<div class="tribe-events-list-event-description tribe-events-content description entry-summary">
 		<?php echo tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ) ); ?>
-		<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more" rel="bookmark"><?php esc_html_e( '了解更多', 'the-events-calendar' ) ?></a>
 	</div><!-- .tribe-events-list-event-description -->
+
+	<div class="d-flex">
+		<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more px-5 py-2" rel="bookmark" style="border:1px solid;">
+			<?php esc_html_e( '了解更多', 'the-events-calendar' ) ?>
+		</a>
+	</div>
 	<?php
 	do_action( 'tribe_events_after_the_content' );
 	?>
