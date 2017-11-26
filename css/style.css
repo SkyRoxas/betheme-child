@@ -8581,16 +8581,16 @@ body.page-id-96 #Content {
 }
 
 .article-list.treatment article.odd {
-  color: #fff;
-  border-color: #fff;
-  background: #387e39;
-}
-
-.article-list.treatment article.even {
   color: #6f6f6f;
   border-color: #6f6f6f;
   background: #ececec;
   flex-direction: row-reverse;
+}
+
+.article-list.treatment article.even {
+  color: #fff;
+  border-color: #fff;
+  background: #387e39;
 }
 
 .article-list.treatment article:last-child {
@@ -8617,6 +8617,13 @@ body.post-type-archive-tribe_events a.tribe-event-url {
 
 body.home {
   background: url("/wp-content/themes/betheme-child/images/bg-front.png") no-repeat;
+  background-size: 100% auto;
+}
+
+@media screen and (max-width: 720px) {
+  body.home {
+    background-position-y: 180px;
+  }
 }
 
 body {

@@ -12,6 +12,10 @@ body.single-doctor,body.post-type-archive-tribe_events{
 
 body.home{
   background: url('/wp-content/themes/betheme-child/images/bg-front.png')no-repeat;
+  background-size: 100% auto;
+  @media screen and (max-width: 720px){
+    background-position-y: 180px;
+  }
 }
 
 body{
