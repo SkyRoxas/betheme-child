@@ -8455,7 +8455,7 @@ body:not(.home):not(.page-id-9):not(.page-id-13) #Content {
 }
 
 .doctor_list > *:not(.section-page-footer) {
-  padding: 50px;
+  padding: 50px !important;
   overflow: hidden;
 }
 
