@@ -11,7 +11,7 @@ get_header();
 ?>
 
 <!-- #Content -->
-<div id="Content" class="p-lg-5" style="box-sizing:border-box;">
+<div id="Content" class="px-lg-2 py-lg-5" style="box-sizing:border-box;">
 	<div class="content_wrapper clearfix">
 
 		<!-- .sections_group -->
