@@ -1,7 +1,10 @@
 @import "layout/flex";
 
-body.single-doctor,body.post-type-archive-tribe_events{
+body.single-doctor,body.post-type-archive-tribe_events,body.single-treatment_node{
   @import "vendors/bootstrap/bootstrap";
+  .container{
+    box-sizing: border-box;
+  }
 }
 
 @import "pages/page";
@@ -55,19 +58,21 @@ body{
   }
 }
 
-// body.home{
-//   .section.mcb-section{
-//     .section_wrapper{
-//       display: flex;
-//       flex-wrap: wrap;
-//       .wrap:last-child{
-//         display: flex;
-//         align-items: center;
-//       }
-//     }
-//   }
-// }
 #custom_post_widget-141{
   color: #fff;
   font-size: 18px;
+}
+
+.single-title{
+  position: relative;
+  font-weight: normal!important;
+  font-size: 35px!important;
+  &:after{
+    content:"";
+    display: block;
+    height: 3px;
+    width: 30px;
+    background: #418D45;
+    margin-top: 15px;
+  }
 }
