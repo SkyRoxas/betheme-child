@@ -126,7 +126,7 @@ $website = tribe_get_event_website_link();
 				'before'       => '',
 				'sep'          => ', ',
 				'after'        => '',
-				'label'        => '活動分類：', // An appropriate plural/singular label will be provided
+				'label'        => '活動分類', // An appropriate plural/singular label will be provided
 				'label_before' => '<div>',
 				'label_after'  => '</div>',
 				'wrap_before'  => '<div class="tribe-events-event-categories">',
@@ -134,9 +134,8 @@ $website = tribe_get_event_website_link();
 			)
 		);
 		?>
-		
-		<?php //echo tribe_meta_event_tags( sprintf( esc_html__( '%s Tags:', 'the-events-calendar' ), tribe_get_event_label_singular() ), ', ', false ) ?>
 
+		<?php //echo tribe_meta_event_tags( sprintf( esc_html__( '%s Tags:', 'the-events-calendar' ), tribe_get_event_label_singular() ), ', ', false ) ?>
 		<?php
 		// Event Website
 		if ( ! empty( $website ) ) : ?>
