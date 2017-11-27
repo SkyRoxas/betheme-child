@@ -55,18 +55,18 @@ body{
   }
 }
 
-body.home{
-  .section.mcb-section{
-    .section_wrapper{
-      display: flex;
-      flex-wrap: wrap;
-      .wrap:last-child{
-        display: flex;
-        align-items: center;
-      }
-    }
-  }
-}
+// body.home{
+//   .section.mcb-section{
+//     .section_wrapper{
+//       display: flex;
+//       flex-wrap: wrap;
+//       .wrap:last-child{
+//         display: flex;
+//         align-items: center;
+//       }
+//     }
+//   }
+// }
 #custom_post_widget-141{
   color: #fff;
   font-size: 18px;

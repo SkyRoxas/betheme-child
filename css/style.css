@@ -8615,6 +8615,11 @@ body.post-type-archive-tribe_events a.tribe-event-url {
   color: #387E39;
 }
 
+body.post-type-archive-tribe_events a.tribe-events-read-more {
+  border-color: #828282;
+  color: #828282;
+}
+
 body.post-type-archive-tribe_events #Content {
   padding-top: 0;
 }
@@ -8685,16 +8690,6 @@ body {
   margin: 0 auto;
   white-space: nowrap;
   text-align: center;
-}
-
-body.home .section.mcb-section .section_wrapper {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-body.home .section.mcb-section .section_wrapper .wrap:last-child {
-  display: flex;
-  align-items: center;
 }
 
 #custom_post_widget-141 {

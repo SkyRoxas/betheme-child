@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 } ?>
 
 <h3 class="screen-reader-text" tabindex="0"><?php echo esc_html( sprintf( esc_html__( '%s List Navigation', 'the-events-calendar' ), $events_label_plural ) ); ?></h3>
-<ul class="tribe-events-sub-nav">
+<ul class="tribe-events-sub-nav" style="display:none;">
 	<!-- Left Navigation -->
 
 	<?php if ( tribe_has_previous_event() ) : ?>
