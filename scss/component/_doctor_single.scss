@@ -1,0 +1,115 @@
+.single-doctor-content {
+  color: #575756;
+  overflow: hidden;
+
+  .container-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100% ;
+    padding: 20px;
+
+    @media(min-width: 1240px) {
+      padding: 0px;
+    }
+
+    > .row {
+      margin: -15px -50px;
+
+      > * {
+        padding: 15px 50px;
+
+        &.right_wrapper {
+          .single-title {
+            margin-top: 10px;
+          }
+
+          .education_wrapper,
+          .experience_wrapper {
+            margin-bottom: 30px;
+
+            .field-label {
+              font-size: 24px;
+              line-height: 24px;
+              font-weight: bold;
+              margin-bottom: 5px;
+            }
+
+            .field-items {
+              font-size: 18px;
+              line-height: 30px;
+              ul {
+                margin: 0px;
+                > li {
+                  position: relative;
+                  padding-left: 13px;
+
+                  &::before {
+                    position: absolute;
+                    content: "";
+                    display: block;
+                    background-color: #575756;
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    left: 2px;
+                    top: 11px;
+                  }
+                }
+              }
+            }
+          }
+
+          .experience_wrapper {
+            margin-bottom: 40px;
+          }
+
+          .body_wrapper {
+            font-size: 18px;
+            line-height: 30px;
+            &::before,
+            &::after {
+              content: "";
+              display: block;
+              height: 3px;
+              width: 30px;
+              background-color: #418D45;
+              margin-bottom: 15px;
+            }
+            &::after {
+              margin-top: 15px;
+              margin-bottom: 0px;
+            }
+            P {
+              margin: 0px;
+            }
+          }
+
+          .treatment_wrapper {
+            margin-top: 30px;
+
+            .field-label {
+              font-size: 24px;
+              line-height: 24px;
+              font-weight: bold;
+              margin-bottom: 25px;
+            }
+
+            .treatment_node_type {
+              text-align: center;
+              a {
+                display: block;
+                color: #387E39;
+              }
+              .title {
+                margin-top: 10px;
+                font-size: 20px;
+                line-height: 20px;
+                white-space: nowrap;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

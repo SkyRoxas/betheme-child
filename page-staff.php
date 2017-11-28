@@ -53,7 +53,7 @@ get_header();
 									<div class="mcb-wrap-inner">
 										<div class="title_wrapper">
 											<a href="<?php the_permalink();?>">
-												<h2 class="title"> <?php the_title(); ?> 醫師</h2>
+												<h2 class="title"> <?php the_title(); ?></h2>
 											</a>
 										</div>
 										<div class="education_wrapper">

@@ -8959,6 +8959,133 @@ body.tribe_events-template-default.single #Content .sidebar .widget-area:before 
   left: 0;
 }
 
+.single-doctor-content {
+  color: #575756;
+  overflow: hidden;
+}
+
+.single-doctor-content .container-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px;
+}
+
+@media (min-width: 1240px) {
+  .single-doctor-content .container-wrapper {
+    padding: 0px;
+  }
+}
+
+.single-doctor-content .container-wrapper > .row {
+  margin: -15px -50px;
+}
+
+.single-doctor-content .container-wrapper > .row > * {
+  padding: 15px 50px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .single-title {
+  margin-top: 10px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .education_wrapper,
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .experience_wrapper {
+  margin-bottom: 30px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .education_wrapper .field-label,
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .experience_wrapper .field-label {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .education_wrapper .field-items,
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .experience_wrapper .field-items {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .education_wrapper .field-items ul,
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .experience_wrapper .field-items ul {
+  margin: 0px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .education_wrapper .field-items ul > li,
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .experience_wrapper .field-items ul > li {
+  position: relative;
+  padding-left: 13px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .education_wrapper .field-items ul > li::before,
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .experience_wrapper .field-items ul > li::before {
+  position: absolute;
+  content: "";
+  display: block;
+  background-color: #575756;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  left: 2px;
+  top: 11px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .experience_wrapper {
+  margin-bottom: 40px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .body_wrapper {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .body_wrapper::before, .single-doctor-content .container-wrapper > .row > *.right_wrapper .body_wrapper::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 30px;
+  background-color: #418D45;
+  margin-bottom: 15px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .body_wrapper::after {
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .body_wrapper P {
+  margin: 0px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .treatment_wrapper {
+  margin-top: 30px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .treatment_wrapper .field-label {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .treatment_wrapper .treatment_node_type {
+  text-align: center;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .treatment_wrapper .treatment_node_type a {
+  display: block;
+  color: #387E39;
+}
+
+.single-doctor-content .container-wrapper > .row > *.right_wrapper .treatment_wrapper .treatment_node_type .title {
+  margin-top: 10px;
+  font-size: 20px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
 body.home {
   background: url("/wp-content/themes/betheme-child/images/bg-front.png") no-repeat;
   background-size: 100% auto;

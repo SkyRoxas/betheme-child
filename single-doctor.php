@@ -13,7 +13,7 @@ require_once 'kint.php';
 
 <!-- #Content -->
 <div id="Content" class="px-lg-2 py-lg-5" style="box-sizing:border-box;">
-	<div class="content_wrapper clearfix">
+	<div class="content_wrapper single-doctor-content clearfix">
 
 		<!-- .sections_group -->
 		<div class="sections_group">
@@ -57,12 +57,12 @@ require_once 'kint.php';
 
 				<?php while (have_posts()) : the_post(); ?>
 
-					<div class="container">
+					<div class="container-wrapper">
 						<div class="row">
-							<div class="col-lg-4 col-12 mb-5">
+							<div class="col-lg-5 col-12 left_wrapper">
 								<?php the_post_thumbnail('342X368'); ?>
 							</div>
-							<div class="col">
+							<div class="col right_wrapper">
 								<h3 class="single-title mb-4"><?php the_title();?></h3>
 								<?php
 									$education = get_field_object('education');
@@ -98,20 +98,24 @@ require_once 'kint.php';
 									<div class="field-label">
 										<?php print $treatment['label']; ?>
 									</div>
-									<div class="field-items">
+									<div class="field-items row">
 										<?php foreach($treatment['value'] as $treatment_post): ?>
-											<div class="field-item">
+											<div class="field-item col-md-3 col-sm-6">
 												<div class="referenced-entity treatment_node_type">
 
 													<div class="icon">
 														<?php $icon = get_field('icon_node', $treatment_post->ID); ?>
-														<img src="<?php print $icon['url']?>" alt="<?php print $icon['alt']?>">
+														<a href="<?php the_permalink($treatment_post->ID); ?>">
+															<img src="<?php print $icon['url']?>" alt="<?php print $icon['alt']?>">
+														</a>
 													</div>
 
 													<div class="title">
-														<?php print $treatment_post->post_title; ?>
+														<a href="<?php the_permalink($treatment_post->ID); ?>">
+															<?php print $treatment_post->post_title; ?>
+														</a>
 													</div>
-													
+
 												</div>
 											</div>
 										<?php endforeach ?>
