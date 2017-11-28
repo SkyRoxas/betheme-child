@@ -1,6 +1,6 @@
 @import "layout/flex";
 
-body.single-doctor,body.post-type-archive-tribe_events,body.single-treatment_node{
+body.single-doctor,body.post-type-archive-tribe_events,body.single-treatment_node,body.single-tribe_events{
   @import "vendors/bootstrap/bootstrap";
   .container{
     box-sizing: border-box;
@@ -12,7 +12,7 @@ body.single-doctor,body.post-type-archive-tribe_events,body.single-treatment_nod
 @import "component/doctor_list";
 @import "component/treatment_list";
 @import "component/tribeevents_list";
-@import "component/event_list";
+@import "component/tribeevents_single";
 
 body.home{
   background: url('/wp-content/themes/betheme-child/images/bg-front.png')no-repeat;

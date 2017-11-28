@@ -44,7 +44,7 @@ $cart_classes = (array) apply_filters( 'tribe_events_tickets_woo_cart_class', ar
 		<?php esc_html_e( 'Tickets', 'event-tickets-plus' ) ?>
 	</h2>
 
-	<div id="css_table" class="tribe-events-tickets">
+	<div id="css_table" class="mb-5">
 		<?php
 		/**
 		 * Reorder the tickets per the admin interface order
@@ -94,10 +94,10 @@ $cart_classes = (array) apply_filters( 'tribe_events_tickets_woo_cart_class', ar
 				$max_quantity = $product->is_sold_individually() ? 1 : $max_quantity;
 				$available    = $ticket->available();
 				echo '<div class="css_tr">';
-				echo '<div class="css_th">入場資訊</div>';
-				echo '<div class="css_th">價錢</div>';
-				echo '<div class="css_th">描述</div>';
-				echo '<div class="css_th">人數</div>';
+				echo '<div class="css_td">入場資訊</div>';
+				echo '<div class="css_td">價錢</div>';
+				echo '<div class="css_td">描述</div>';
+				echo '<div class="css_td">人數</div>';
 				echo '</div>';
 				/**
 				 * Filter classes on the row
@@ -154,9 +154,9 @@ $cart_classes = (array) apply_filters( 'tribe_events_tickets_woo_cart_class', ar
 						?>
 						<span class="tribe-tickets-remaining">
 						<?php
-						echo sprintf( esc_html__( '%1$s available', 'event-tickets-plus' ),
-							'<span class="available-stock" data-product-id="' . esc_attr( $ticket->ID ) . '">' . tribe_tickets_get_readable_amount( $stock, null, false ) . '</span>'
-						);
+						// echo sprintf( esc_html__( '%1$s available', 'event-tickets-plus' ),
+						// 	'<span class="available-stock" data-product-id="' . esc_attr( $ticket->ID ) . '">' . tribe_tickets_get_readable_amount( $stock, null, false ) . '</span>'
+						// );
 						?>
 						</span>
 						<?php

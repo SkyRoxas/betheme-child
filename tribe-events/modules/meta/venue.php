@@ -18,12 +18,15 @@ $website = tribe_get_venue_website_link();
 ?>
 
 <div class="tribe-events-meta-group tribe-events-meta-group-venue">
-	<h3 class="tribe-events-single-section-title"> <?php esc_html_e( tribe_get_venue_label_singular(), 'the-events-calendar' ) ?> </h3>
-	<div>
-		<?php do_action( 'tribe_events_single_meta_venue_section_start' ) ?>
-
+	<div class="mb-3">
+		<div class="tribe-events-single-section-title label">
+			<?php esc_html_e( tribe_get_venue_label_singular(), 'the-events-calendar' ) ?>
+		</div>
 		<div class="tribe-venue"> <?php echo tribe_get_venue() ?> </div>
+	</div>
 
+	<div class="mb-3">
+		<?php do_action( 'tribe_events_single_meta_venue_section_start' ) ?>
 		<?php if ( tribe_address_exists() ) : ?>
 			<div class="tribe-venue-location">
 				<address class="tribe-events-address">
@@ -35,9 +38,11 @@ $website = tribe_get_venue_website_link();
 				</address>
 			</div>
 		<?php endif; ?>
+	</div>
 
+	<div>
 		<?php if ( ! empty( $phone ) ): ?>
-			<div> <?php esc_html_e( 'Phone:', 'the-events-calendar' ) ?> </div>
+			<div class="label"> <?php esc_html_e( 'Phone:', 'the-events-calendar' ) ?> </div>
 			<div class="tribe-venue-tel"> <?php echo $phone ?> </div>
 		<?php endif ?>
 

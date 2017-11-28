@@ -1,0 +1,32 @@
+body.single-tribe_events{
+  .colorbox1{
+    background:#ECECEC;
+    border-radius: 4px;
+    border: 1px solid #C6C6C5;
+  }
+  .label{
+    font-weight: bold;
+  }
+
+
+  #css_table {
+      display:table;
+      table-layout:fixed;
+      width: 100%;
+  }
+  .css_tr {
+    display: table-row;
+
+  }
+  .css_td {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    &:first-child{
+      text-align: left;
+    }
+    &:last-child{
+      text-align: right;
+    }
+  }
+}
