@@ -31,9 +31,11 @@ Theme My Login will always look in your theme's directory first, before using th
 		<div class="tml-rememberme-submit-wrap">
 			<p class="tml-rememberme-wrap">
 				<input name="rememberme" type="checkbox" id="rememberme<?php $template->the_instance(); ?>" value="forever" />
-				<label for="rememberme<?php $template->the_instance(); ?>"><?php esc_attr_e( 'Remember Me', 'theme-my-login' ); ?></label>
+				<label for="rememberme<?php $template->the_instance(); ?>"><?php esc_attr_e( '記住我', 'theme-my-login' ); ?></label>
 			</p>
-
+		</div>
+		<div class="btn-wrap">
+			<?php $template->the_action_links( array( 'login' => false ,'register'=> false) ); ?>
 			<p class="tml-submit-wrap">
 				<input type="submit" name="wp-submit" id="wp-submit<?php $template->the_instance(); ?>" value="<?php esc_attr_e( '送出', 'theme-my-login' ); ?>" />
 				<input type="hidden" name="redirect_to" value="<?php $template->the_redirect_url( 'login' ); ?>" />
@@ -42,5 +44,5 @@ Theme My Login will always look in your theme's directory first, before using th
 			</p>
 		</div>
 	</form>
-	<?php $template->the_action_links( array( 'login' => false ) ); ?>
+	<?php $template->the_action_links( array( 'login' => false ,'lostpassword'=> false) ); ?>
 </div>
