@@ -1,4 +1,6 @@
 @import "layout/flex";
+@import "vendors/bootstrap/custom";
+@import "vendors/bootstrap/mixins";
 
 body.single-doctor,body.post-type-archive-tribe_events,body.single-treatment_node,body.single-tribe_events{
   @import "vendors/bootstrap/bootstrap";
