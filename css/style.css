@@ -9112,6 +9112,19 @@ body:not(.home):not(.page-id-9):not(.page-id-13):not(.single-treatment_node):not
   background-position: left top;
 }
 
+#header-top {
+  background: #3C3C3B;
+  padding: 5px;
+}
+
+#header-top > .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
 .doctor_list > *:not(.section-page-footer) {
   padding: 50px !important;
   overflow: hidden;
@@ -9527,6 +9540,37 @@ body.single-tribe_events .css_tr.tbody .quantity input {
   white-space: nowrap;
 }
 
+.menu {
+  color: #CDCDCD;
+}
+
+.menu a {
+  color: inherit;
+}
+
+.menu ul {
+  display: flex;
+}
+
+.menu ul > li {
+  padding: 0px 10px;
+}
+
+#searchform > .wrap {
+  display: flex;
+  align-items: center;
+}
+
+#searchform .icon_search {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#searchform input {
+  margin: 0px;
+}
+
 body.home {
   background: url("/wp-content/themes/betheme-child/images/bg-front.png") no-repeat;
   background-size: 100% auto;
@@ -9540,6 +9584,7 @@ body.home {
 
 body {
   background-color: #DDD7CE !important;
+  padding: 0px !important;
 }
 
 #Wrapper {

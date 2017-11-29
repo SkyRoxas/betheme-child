@@ -1,0 +1,11 @@
+#header-top{
+  background: #3C3C3B;
+  padding: 5px;
+  >.wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+}
