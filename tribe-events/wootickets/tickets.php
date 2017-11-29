@@ -40,9 +40,9 @@ $cart_classes = (array) apply_filters( 'tribe_events_tickets_woo_cart_class', ar
 	enctype='multipart/form-data'
 >
 
-	<h2 class="tribe-events-tickets-title tribe--tickets">
+	<h3 class="tribe-events-tickets-title tribe--tickets d-none">
 		<?php esc_html_e( 'Tickets', 'event-tickets-plus' ) ?>
-	</h2>
+	</h3>
 
 	<div id="css_table" class="mb-5">
 		<?php
@@ -93,7 +93,7 @@ $cart_classes = (array) apply_filters( 'tribe_events_tickets_woo_cart_class', ar
 				$max_quantity = $product->backorders_allowed() ? '' : $product->get_stock_quantity();
 				$max_quantity = $product->is_sold_individually() ? 1 : $max_quantity;
 				$available    = $ticket->available();
-				echo '<div class="css_tr">';
+				echo '<div class="css_tr thead">';
 				echo '<div class="css_td">入場資訊</div>';
 				echo '<div class="css_td">價錢</div>';
 				echo '<div class="css_td">描述</div>';
@@ -108,11 +108,11 @@ $cart_classes = (array) apply_filters( 'tribe_events_tickets_woo_cart_class', ar
 				 * @param int $ticket->ID
 				 */
 				$row_classes = (array) apply_filters( 'tribe_events_tickets_row_class', array( 'woocommerce', 'tribe-tickets-form-row' ), $ticket->ID );
-				echo '<div class="css_tr ' . esc_attr( implode( ' ', $row_classes ) ) . '" data-product-id="' . esc_attr( $ticket->ID ) . '">';
+				echo '<div class="css_tr tbody ' . esc_attr( implode( ' ', $row_classes ) ) . '" data-product-id="' . esc_attr( $ticket->ID ) . '">';
 
-				echo '<div class="css_td tickets_name">' . $ticket->name . '</div>';
+				echo '<div class="css_td tickets-field tickets_name">' . $ticket->name . '</div>';
 
-				echo '<div class="css_td tickets_price">';
+				echo '<div class="css_td tickets-field tickets_price">';
 
 				if ( method_exists( $product, 'get_price' ) && $product->get_price() ) {
 					echo $this->get_price_html( $product );
@@ -122,7 +122,7 @@ $cart_classes = (array) apply_filters( 'tribe_events_tickets_woo_cart_class', ar
 
 				echo '</div>';
 
-				echo '<div class="css_td tickets_description">' . ( $ticket->show_description() ? $ticket->description : '' ) . '</div>';
+				echo '<div class="css_td tickets-field tickets_description">' . ( $ticket->show_description() ? $ticket->description : '' ) . '</div>';
 				/**
 				 * Filter classes on the Price column
 				 *
@@ -131,7 +131,7 @@ $cart_classes = (array) apply_filters( 'tribe_events_tickets_woo_cart_class', ar
 				 * @param array $column_classes
 				 */
 				$column_classes = (array) apply_filters( 'tribe_events_tickets_woo_quantity_column_class', array( 'woocommerce' ) );
-				echo '<div class="css_td ' . esc_attr( implode( ' ', $column_classes ) ) . '" data-product-id="' . esc_attr( $ticket->ID ) . '">';
+				echo '<div class="css_td tickets-field ' . esc_attr( implode( ' ', $column_classes ) ) . '" data-product-id="' . esc_attr( $ticket->ID ) . '">';
 
 				if ( 0 !== $available ) {
 					// Max quantity will be left open if backorders allowed, restricted to 1 if the product is
@@ -201,33 +201,32 @@ $cart_classes = (array) apply_filters( 'tribe_events_tickets_woo_cart_class', ar
 			}
 
 		endforeach; ?>
-
-		<?php if ( $is_there_any_product_to_sell ) : ?>
-			<div class="css_tr">
-				<div colspan="4" class="css_td woocommerce add-to-cart">
-					<?php if ( $must_login ) : ?>
-						<?php include Tribe__Tickets_Plus__Main::instance()->get_template_hierarchy( 'login-to-purchase' ); ?>
-					<?php else: ?>
-						<button
-							type="submit"
-							name="wootickets_process"
-							value="1"
-							class="tribe-button"
-						>
-							<?php esc_html_e( 'Add to cart', 'event-tickets-plus' );?>
-						</button>
-					<?php endif; ?>
-				</div>
-			</div>
-		<?php endif; ?>
-		<noscript>
-			<div class="css_tr">
-				<div class="css_td tribe-link-tickets-message">
-					<div class="no-javascript-msg"><?php esc_html_e( 'You must have JavaScript activated to purchase tickets. Please enable JavaScript in your browser.', 'event-tickets-plus' ); ?></div>
-				</div>
-			</div>
-		</noscript>
 	</div>
+	<?php if ( $is_there_any_product_to_sell ) : ?>
+		<div class="d-flex justify-content-end">
+			<div colspan="4" class="css_td woocommerce add-to-cart">
+				<?php if ( $must_login ) : ?>
+					<?php include Tribe__Tickets_Plus__Main::instance()->get_template_hierarchy( 'login-to-purchase' ); ?>
+				<?php else: ?>
+					<button
+						type="submit"
+						name="wootickets_process"
+						value="1"
+						class="tribe-button"
+					>
+						<?php esc_html_e( 'Add to cart', 'event-tickets-plus' );?>
+					</button>
+				<?php endif; ?>
+			</div>
+		</div>
+	<?php endif; ?>
+	<noscript>
+		<div class="css_tr">
+			<div class="css_td tribe-link-tickets-message">
+				<div class="no-javascript-msg"><?php esc_html_e( 'You must have JavaScript activated to purchase tickets. Please enable JavaScript in your browser.', 'event-tickets-plus' ); ?></div>
+			</div>
+		</div>
+	</noscript>
 </form>
 <?php
 $content = ob_get_clean();

@@ -18,7 +18,7 @@ $set_venue_apart = apply_filters( 'tribe_events_single_event_the_meta_group_venu
 ?>
 
 <?php if ( $not_skeleton ) : ?>
-	<div class="tribe-events-single-section tribe-events-event-meta primary tribe-clearfix">
+	<div class="tribe-events-single-section tribe-events-event-meta primary tribe-clearfix m-0">
 <?php endif; ?>
 
 <?php do_action( 'tribe_events_single_event_meta_primary_section_start' ); ?>
@@ -46,34 +46,32 @@ $set_venue_apart = apply_filters( 'tribe_events_single_event_the_meta_group_venu
 
 <?php if ( $set_venue_apart ) : ?>
 	<?php if ( $not_skeleton ) : ?>
-		<div class="tribe-events-single-section tribe-events-event-meta secondary tribe-clearfix">
+		<div class="tribe-events-single-section tribe-events-event-meta secondary tribe-clearfix m-0 mb-4">
 	<?php endif; ?>
 	<?php do_action( 'tribe_events_single_event_meta_secondary_section_start' ); ?>
 
-	<div class="container p-5 colorbox1">
-		<div class="row mb-5">
-			<div class="col-6">
+	<div class="container p-md-4 p-2 colorbox1">
+		<div class="row">
+			<div class="col-md-6 col-12">
 				<div>
 					<?php tribe_get_template_part( 'modules/meta/details' ); ?>
 				</div>
 			</div>
-			<div class="col-6">
+			<div class="col-md-6 col-12">
 				<?php if ( tribe_has_organizer() ): ?>
 					<?php tribe_get_template_part( 'modules/meta/organizer' ); ?>
 				<?php endif; ?>
 			</div>
 		</div>
 	</div>
-	<div class="mt-5 p-5 colorbox1">
-		<div class="container">
+	<div class="container mt-4 p-md-4 p-2 colorbox1">
 			<div class="row">
-				<div class="col-6">
+				<div class="col-md-6 col-12">
 					<?php tribe_get_template_part( 'modules/meta/venue' ); ?>
 				</div>
-				<div class="col-6">
+				<div class="col-md-6 col-12">
 					<?php tribe_get_template_part( 'modules/meta/map' );?>
 				</div>
-			</div>
 		</div>
 	</div>
 

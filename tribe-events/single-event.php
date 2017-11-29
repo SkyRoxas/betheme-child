@@ -24,17 +24,17 @@ $event_id = get_the_ID();
 
 <div id="tribe-events-content" class="tribe-events-single">
 
-	<p class="tribe-events-back">
+	<p class="tribe-events-back p-0 mb-2">
 		<a href="<?php echo esc_url( tribe_get_events_link() ); ?>">< 回到進修與學習</a>
 	</p>
 
 	<!-- Notices -->
 	<?php tribe_the_notices() ?>
 
-	<?php the_title( '<h1 class="tribe-events-single-event-title">', '</h1>' ); ?>
+	<?php the_title( '<h3 class="tribe-events-single-event-title">', '</h3>' ); ?>
 
 	<div class="tribe-events-schedule tribe-clearfix">
-		<?php echo tribe_events_event_schedule_details( $event_id, '<h2>', '</h2>' ); ?>
+		<?php echo tribe_events_event_schedule_details( $event_id, '<div>', '</div>' ); ?>
 	</div>
 
 	<!-- Event header -->
@@ -49,7 +49,9 @@ $event_id = get_the_ID();
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<!-- Event featured image, but exclude link -->
 			<?php //echo tribe_event_featured_image( $event_id, 'full', false ); ?>
-			<?php the_post_thumbnail('575X420'); ?>
+			<div class="mb-4">
+				<?php the_post_thumbnail('330Xauto'); ?>
+			</div>
 
 			<!-- Event content -->
 			<?php do_action( 'tribe_events_single_event_before_the_content' ) ?>

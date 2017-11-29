@@ -71,7 +71,8 @@ add_filter( 'excerpt_length', 'excerpt_more_example' );
 function add_custom_sizes()
 {
     add_image_size('575X420', 575, 445, array( 'center', 'center'));
-	add_image_size('342X368', 342, 368 , array( 'center', 'center'));
+		add_image_size('330Xauto', 330, auto, array( 'center', 'center'));
+		add_image_size('342X368', 342, 368 , array( 'center', 'center'));
 }
 add_action('after_setup_theme', 'add_custom_sizes');
 
