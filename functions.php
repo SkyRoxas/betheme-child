@@ -1,6 +1,6 @@
 <?php
 
-//require_once 'kint.php';
+require_once 'kint.php';
 
 /* ---------------------------------------------------------------------------
  * Child Theme URI | DO NOT CHANGE
@@ -71,7 +71,7 @@ add_filter( 'excerpt_length', 'excerpt_more_example' );
 function add_custom_sizes()
 {
     add_image_size('575X420', 575, 445, array( 'center', 'center'));
-		add_image_size('330Xauto', 330, auto, array( 'center', 'center'));
+		add_image_size('330Xauto', 330, 'auto', array( 'center', 'center'));
 		add_image_size('342X368', 342, 368 , array( 'center', 'center'));
 }
 add_action('after_setup_theme', 'add_custom_sizes');
@@ -91,7 +91,11 @@ function bonze_page_templates( $post_templates ) {
 }
 
 add_filter( 'theme_page_templates', 'bonze_page_templates' );
-
+/**
+ * My custom registr field
+ * @param  array $errors  error message
+ * @return array          change error message
+ */
 function bonze_tml_registration_errors( $errors ) {
 	if ( empty( $_POST['name'] ) )
 		$errors->add( 'empty_name', '<strong>錯誤</strong>: 請輸入你的姓名' );
@@ -101,11 +105,14 @@ function bonze_tml_registration_errors( $errors ) {
 }
 add_filter( 'registration_errors', 'bonze_tml_registration_errors' );
 
-
+/**
+ * My custom user meta
+ * @param  int   $user_id new register user id
+ */
 function bonze_tml_user_register( $user_id ) {
 	if ( !empty( $_POST['name'] ) )
-		update_user_meta( $user_id, 'name', $_POST['name'] );
+		update_user_meta( $user_id, 'first_name', sanitize_text_field($_POST['name']) );
 	if ( !empty( $_POST['phone'] ) )
-		update_user_meta( $user_id, 'phone', $_POST['phone'] );
+		update_user_meta( $user_id, 'billing_phone', sanitize_text_field($_POST['phone']) );
 }
 add_action( 'user_register', 'bonze_tml_user_register' );
