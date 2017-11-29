@@ -11,18 +11,18 @@ Theme My Login will always look in your theme's directory first, before using th
 		<p class="tml-user-login-wrap">
 			<label for="user_login<?php $template->the_instance(); ?>"><?php
 				if ( 'username' == $theme_my_login->get_option( 'login_type' ) ) {
-					_e( 'Username', 'theme-my-login' );
+					_e( '帳號', 'theme-my-login' );
 				} elseif ( 'email' == $theme_my_login->get_option( 'login_type' ) ) {
-					_e( 'E-mail', 'theme-my-login' );
+					_e( 'Email', 'theme-my-login' );
 				} else {
-					_e( 'Username or E-mail', 'theme-my-login' );
+					_e( '帳號 或是 Email', 'theme-my-login' );
 				}
 			?></label>
 			<input type="text" name="log" id="user_login<?php $template->the_instance(); ?>" class="input" value="<?php $template->the_posted_value( 'log' ); ?>" size="20" />
 		</p>
 
 		<p class="tml-user-pass-wrap">
-			<label for="user_pass<?php $template->the_instance(); ?>"><?php _e( 'Password', 'theme-my-login' ); ?></label>
+			<label for="user_pass<?php $template->the_instance(); ?>"><?php _e( '密碼', 'theme-my-login' ); ?></label>
 			<input type="password" name="pwd" id="user_pass<?php $template->the_instance(); ?>" class="input" value="" size="20" autocomplete="off" />
 		</p>
 
