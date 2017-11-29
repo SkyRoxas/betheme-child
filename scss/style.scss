@@ -10,12 +10,14 @@ body.single-doctor,body.post-type-archive-tribe_events,body.single-treatment_nod
 }
 
 @import "pages/page";
-
+@import "layout/layout";
 @import "component/doctor_list";
 @import "component/treatment_list";
 @import "component/tribeevents_list";
 @import "component/tribeevents_single";
 @import "component/doctor_single";
+@import "component/menu";
+@import "component/searchform";
 
 
 body.home{
@@ -28,6 +30,7 @@ body.home{
 
 body{
   background-color: #DDD7CE!important;
+  padding: 0px!important;
 }
 
 #Wrapper{
