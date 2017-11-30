@@ -9139,6 +9139,7 @@ div.sidebar .widget-area {
 }
 
 div.sidebar .widget-area > * {
+  padding: 0px;
   margin-bottom: 26px;
 }
 
@@ -9597,14 +9598,19 @@ body.single-tribe_events .css_tr.tbody .quantity input {
 }
 
 .widget_categories,
-#custom_html-4 {
-  margin: 0px;
+#custom_html-2 {
+  margin-top: 0px;
   border: none;
   text-align: center;
 }
 
+.widget_categories::after,
+#custom_html-2::after {
+  display: none;
+}
+
 .widget_categories h3,
-#custom_html-4 h3 {
+#custom_html-2 h3 {
   font-size: 20px;
   line-height: 20px;
   color: #575756;
@@ -9613,25 +9619,20 @@ body.single-tribe_events .css_tr.tbody .quantity input {
 }
 
 .widget_categories ul,
-#custom_html-4 ul {
+#custom_html-2 ul {
   background-color: inherit !important;
   padding: 0px;
   margin: -5px;
 }
 
-.widget_categories ul::after,
-#custom_html-4 ul::after {
-  display: none;
-}
-
 .widget_categories ul li,
-#custom_html-4 ul li {
+#custom_html-2 ul li {
   display: block;
   padding: 5px;
 }
 
 .widget_categories ul li a,
-#custom_html-4 ul li a {
+#custom_html-2 ul li a {
   background-color: white;
   color: #575756 !important;
   font-size: 18px;
@@ -9642,11 +9643,11 @@ body.single-tribe_events .css_tr.tbody .quantity input {
   display: block;
 }
 
-#custom_html-5 {
+#custom_html-3 {
   text-align: center;
 }
 
-#custom_html-5 h3 {
+#custom_html-3 h3 {
   font-size: 20px;
   line-height: 20px;
   color: #575756;
@@ -9654,26 +9655,26 @@ body.single-tribe_events .css_tr.tbody .quantity input {
   margin-bottom: 20px;
 }
 
-#custom_html-5 .textwidget {
+#custom_html-3 .textwidget {
   margin: -13px;
 }
 
-#custom_html-5 .textwidget > * {
+#custom_html-3 .textwidget > * {
   padding: 13px;
 }
 
-#custom_html-5 .textwidget > *.entity-event .img_wrapper img {
+#custom_html-3 .textwidget > *.entity-event .img_wrapper img {
   display: block;
   margin: 0 auto;
 }
 
-#custom_html-5 .textwidget > *.entity-event .title {
+#custom_html-3 .textwidget > *.entity-event .title {
   margin-top: 16px;
   font-size: 18px;
   line-height: 18px;
 }
 
-#custom_html-5 .textwidget > *.entity-event .title a {
+#custom_html-3 .textwidget > *.entity-event .title a {
   color: #575756;
 }
 

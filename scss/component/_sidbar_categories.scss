@@ -1,8 +1,11 @@
 .widget_categories,
-#custom_html-4  {
-  margin: 0px;
+#custom_html-2  {
+  margin-top: 0px;
   border: none;
   text-align: center;
+  &::after {
+    display: none;
+  }
   h3 {
     font-size: 20px;
     line-height: 20px;
@@ -14,9 +17,6 @@
     background-color: inherit!important;
     padding: 0px;
     margin: -5px;
-    &::after {
-      display: none;
-    }
 
     li {
       display: block;
