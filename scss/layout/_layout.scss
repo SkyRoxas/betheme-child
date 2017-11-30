@@ -9,3 +9,10 @@
     margin: 0 auto;
   }
 }
+.with_aside.aside_right {
+  #Content {
+    .content_wrapper {
+      padding-right: 0px;
+    }
+  }
+}

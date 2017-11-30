@@ -1,0 +1,33 @@
+#custom_html-5 {
+  text-align: center;
+  h3 {
+    font-size: 20px;
+    line-height: 20px;
+    color: #575756;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .textwidget {
+    margin: -13px;
+    > * {
+      padding: 13px;
+      &.entity-event {
+        .img_wrapper {
+          img {
+            display: block;
+            margin: 0 auto;
+          }
+        }
+        .title {
+          margin-top: 16px;
+          font-size: 18px;
+          line-height: 18px;
+          a {
+            color: #575756;
+          }
+        }
+      }
+    }
+  }
+}
