@@ -98,10 +98,14 @@ add_filter( 'theme_page_templates', 'bonze_page_templates' );
  * @return array          change error message
  */
 function bonze_tml_registration_errors( $errors ) {
-	if ( empty( $_POST['name'] ) )
+	if ( empty( $_POST['name'] ) ){
 		$errors->add( 'empty_name', '<strong>錯誤</strong>: 請輸入你的姓名' );
-	if ( empty( $_POST['phone'] ) )
+	}
+
+	if ( empty( $_POST['phone'] ) ){
 		$errors->add( 'empty_phone', '<strong>錯誤</strong>: 請輸入你的電話' );
+	}
+
 	return $errors;
 }
 add_filter( 'registration_errors', 'bonze_tml_registration_errors' );
@@ -111,10 +115,15 @@ add_filter( 'registration_errors', 'bonze_tml_registration_errors' );
  * @param  int   $user_id new register user id
  */
 function bonze_tml_user_register( $user_id ) {
-	if ( !empty( $_POST['name'] ) )
+	if ( !empty( $_POST['name'] ) ){
 		update_user_meta( $user_id, 'first_name', sanitize_text_field($_POST['name']) );
-	if ( !empty( $_POST['phone'] ) )
+	}
+	if ( !empty( $_POST['phone'] ) ){
 		update_user_meta( $user_id, 'billing_phone', sanitize_text_field($_POST['phone']) );
+	}
+	if(!empty($_POST['user_doctor_no'])){
+		update_user_meta( $user_id, 'doctor_no', sanitize_text_field($_POST['user_doctor_no']) );
+	}
 }
 add_action( 'user_register', 'bonze_tml_user_register' );
 

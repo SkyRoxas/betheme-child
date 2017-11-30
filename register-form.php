@@ -9,6 +9,10 @@ Theme My Login will always look in your theme's directory first, before using th
 	<?php $template->the_errors(); ?>
 	<form name="registerform" id="registerform<?php $template->the_instance(); ?>" action="<?php $template->the_action_url('register', 'login_post'); ?>" method="post">
 		<p>
+			<label for="user_doctor_no<?php $template->the_instance(); ?>"><?php _e('醫師證號(非必填)', 'theme-my-login') ?></label>
+			<input type="text" name="user_doctor_no" id="user_doctor_no<?php $template->the_instance(); ?>" class="input" value="<?php $template->the_posted_value('user_doctor_no'); ?>" size="20" tabindex="20" />
+		</p>
+		<p>
 			<label for="name<?php $template->the_instance(); ?>"><?php _e('姓名', 'theme-my-login') ?></label>
 			<input type="text" name="name" id="name<?php $template->the_instance(); ?>" class="input" value="<?php $template->the_posted_value('name'); ?>" size="20" tabindex="20" />
 		</p>
@@ -29,8 +33,6 @@ Theme My Login will always look in your theme's directory first, before using th
 			<input type="text" name="user_login" id="user_login<?php $template->the_instance(); ?>" class="input" value="<?php $template->the_posted_value('user_login'); ?>" size="20" />
 		</p>
 		<?php endif; ?>
-
-
 
 		<?php do_action('register_form'); ?>
 
