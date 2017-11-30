@@ -9,7 +9,7 @@ get_header();
 
 <!-- #Content -->
 <div id="Content" class="with_aside">
-	<div class="content_wrapper clearfix" style="padding:0px 0px 0px 30px;">
+	<div class="content_wrapper clearfix">
 
 		<!-- .sections_group -->
 		<div class="sections_group">
