@@ -8,7 +8,7 @@
  */
 
 get_header();
-require_once 'kint.php';
+// require_once 'kint.php';
 ?>
 
 <!-- #Content -->

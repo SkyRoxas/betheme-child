@@ -18,6 +18,7 @@ body.single-portfolio{
 
 @import "pages/page";
 @import "layout/layout";
+@import "layout/sidbar";
 @import "component/doctor_list";
 @import "component/treatment_list";
 @import "component/tribeevents_list";
@@ -26,6 +27,8 @@ body.single-portfolio{
 @import "component/menu";
 @import "component/searchform";
 @import "component/news_list";
+@import "component/sidbar_categories";
+@import "component/sidbar_event_post";
 
 
 body.home{

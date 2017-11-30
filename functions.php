@@ -102,10 +102,14 @@ add_filter( 'theme_page_templates', 'bonze_page_templates' );
  * @return array          change error message
  */
 function bonze_tml_registration_errors( $errors ) {
-	if ( empty( $_POST['name'] ) )
+	if ( empty( $_POST['name'] ) ){
 		$errors->add( 'empty_name', '<strong>錯誤</strong>: 請輸入你的姓名' );
-	if ( empty( $_POST['phone'] ) )
+	}
+
+	if ( empty( $_POST['phone'] ) ){
 		$errors->add( 'empty_phone', '<strong>錯誤</strong>: 請輸入你的電話' );
+	}
+
 	return $errors;
 }
 add_filter( 'registration_errors', 'bonze_tml_registration_errors' );
@@ -115,9 +119,80 @@ add_filter( 'registration_errors', 'bonze_tml_registration_errors' );
  * @param  int   $user_id new register user id
  */
 function bonze_tml_user_register( $user_id ) {
-	if ( !empty( $_POST['name'] ) )
+	if ( !empty( $_POST['name'] ) ){
 		update_user_meta( $user_id, 'first_name', sanitize_text_field($_POST['name']) );
-	if ( !empty( $_POST['phone'] ) )
+	}
+	if ( !empty( $_POST['phone'] ) ){
 		update_user_meta( $user_id, 'billing_phone', sanitize_text_field($_POST['phone']) );
+	}
+	if(!empty($_POST['user_doctor_no'])){
+		update_user_meta( $user_id, 'doctor_no', sanitize_text_field($_POST['user_doctor_no']) );
+	}
 }
 add_action( 'user_register', 'bonze_tml_user_register' );
+
+
+
+function bonze_get_portfilio_category($atts)
+{
+		$markup;
+		$terms = get_terms( array(
+    	'taxonomy' => 'portfolio-types',
+    	'hide_empty' => false,
+		));
+
+		foreach ($terms as $key => $term) {
+			$markup.= '<li class="cat-item cat-item-'.$term->term_id .'">
+										<a href="'. get_term_link($term->slug,$term->taxonomy) .'"> ' . $term->name . ' </a>
+								</li>';
+		}
+
+		return '<ul>
+			'.$markup.'
+		</ul>';
+}
+
+add_shortcode('portfilio-category', 'bonze_get_portfilio_category');
+
+function bonze_get_event_posts($atts) {
+	$markup;
+
+	$args = [
+		'posts_per_page' => 2,
+		'post_type' => 'tribe_events',
+		'order' => 'DESC',
+	];
+
+	$the_query = new WP_Query( $args );
+
+		while ($the_query->have_posts()) {
+			$the_query->the_post();
+			$post = get_post();
+
+			$markup.= '<div class="entity-event"><div class="img_wrapper">
+										<a href="'. get_post_permalink($post) .'">'. get_the_post_thumbnail($post,'190X190') .'</a>
+								</div>
+								<div class="title">
+									<a href="'. get_post_permalink($post) .'">'. $post->post_title .'</a>
+								</div>
+			</div>';
+		}
+
+	return $markup;
+}
+
+add_shortcode('event-posts', 'bonze_get_event_posts');
+
+function bonze_classes( $classes ) {
+		// $post = get_post();
+		// d($post);
+    //
+		// if($post and $post->type == 'tribe_events') {
+    //
+		// 	$classes[] = 'with_aside aside_right';
+	  //   return $classes;
+		// }
+  return $classes;
+}
+
+add_filter( 'body_class','bonze_classes');

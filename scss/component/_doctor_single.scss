@@ -6,10 +6,10 @@
     max-width: 1000px;
     margin: 0 auto;
     width: 100% ;
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
 
     @media(min-width: 1240px) {
-      padding: 0px;
+      padding: 20px 0px;
     }
 
     > .row {
@@ -94,17 +94,24 @@
               margin-bottom: 25px;
             }
 
-            .treatment_node_type {
-              text-align: center;
-              a {
-                display: block;
-                color: #387E39;
-              }
-              .title {
-                margin-top: 10px;
-                font-size: 20px;
-                line-height: 20px;
-                white-space: nowrap;
+            .field-items  {
+              margin: -15px;
+              > * {
+                padding: 15px;
+                
+                .treatment_node_type {
+                  text-align: center;
+                  a {
+                    display: block;
+                    color: #387E39;
+                  }
+                  .title {
+                    margin-top: 10px;
+                    font-size: 20px;
+                    line-height: 20px;
+                    white-space: nowrap;
+                  }
+                }
               }
             }
           }
