@@ -9,7 +9,7 @@ get_header();
 
 <!-- #Content -->
 <div id="Content" class="with_aside">
-	<div class="content_wrapper clearfix" style="padding:0px 30px;">
+	<div class="content_wrapper clearfix" style="padding:0px 0px 0px 30px;">
 
 		<!-- .sections_group -->
 		<div class="sections_group">
@@ -61,7 +61,7 @@ get_header();
 		<!-- .four-columns - sidebar -->
 		<div class="sidebar sidebar-1 four columns">
 			<div class="widget-area clearfix">
-				<?php dynamic_sidebar( 'sidebar-firstsidebar' ); ?>
+				<?php dynamic_sidebar( 'sidebar-event_sidbar' ); ?>
 			</div>
 		</div>
 	</div>

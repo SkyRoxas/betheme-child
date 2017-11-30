@@ -1,6 +1,6 @@
 <?php
 
-// require_once 'kint.php';
+require_once 'kint.php';
 
 /* ---------------------------------------------------------------------------
  * Child Theme URI | DO NOT CHANGE
@@ -65,18 +65,14 @@ function excerpt_length_example(){
       return 120;
 }
 
-add_filter( 'excerpt_length', 'excerpt_length_example' );
+add_filter( 'excerpt_length', 'excerpt_more_example' );
 
 
 function add_custom_sizes()
 {
-		// single.php
-    add_image_size('685X455', 685, 455, array( 'center', 'center'));
-		// page-treament.php
-		add_image_size('575X420', 575, 445, array( 'center', 'center'));
-		// single-event
+    add_image_size('575X420', 575, 445, array( 'center', 'center'));
+		add_image_size('190X190', 190, 190, array( 'center', 'center'));
 		add_image_size('330Xauto', 330, 'auto', array( 'center', 'center'));
-		// single-doctor.php
 		add_image_size('342X368', 342, 368 , array( 'center', 'center'));
 }
 add_action('after_setup_theme', 'add_custom_sizes');
@@ -131,8 +127,6 @@ function bonze_tml_user_register( $user_id ) {
 }
 add_action( 'user_register', 'bonze_tml_user_register' );
 
-
-
 function bonze_get_portfilio_category($atts)
 {
 		$markup;
@@ -153,6 +147,27 @@ function bonze_get_portfilio_category($atts)
 }
 
 add_shortcode('portfilio-category', 'bonze_get_portfilio_category');
+
+function bonze_get_event_category($atts)
+{
+		$markup;
+		$terms = get_terms( array(
+    	'taxonomy' => 'event',
+    	'hide_empty' => false,
+		));
+
+		foreach ($terms as $key => $term) {
+			$markup.= '<li class="cat-item cat-item-'.$term->term_id .'">
+										<a href="'. get_term_link($term->slug,$term->taxonomy) .'"> ' . $term->name . ' </a>
+								</li>';
+		}
+
+		return '<ul>
+			'.$markup.'
+		</ul>';
+}
+
+add_shortcode('event-category', 'bonze_get_event_category');
 
 function bonze_get_event_posts($atts) {
 	$markup;
@@ -182,17 +197,3 @@ function bonze_get_event_posts($atts) {
 }
 
 add_shortcode('event-posts', 'bonze_get_event_posts');
-
-function bonze_classes( $classes ) {
-		// $post = get_post();
-		// d($post);
-    //
-		// if($post and $post->type == 'tribe_events') {
-    //
-		// 	$classes[] = 'with_aside aside_right';
-	  //   return $classes;
-		// }
-  return $classes;
-}
-
-add_filter( 'body_class','bonze_classes');
