@@ -65,14 +65,18 @@ function excerpt_length_example(){
       return 120;
 }
 
-add_filter( 'excerpt_length', 'excerpt_more_example' );
+add_filter( 'excerpt_length', 'excerpt_length_example' );
 
 
 function add_custom_sizes()
 {
-    add_image_size('575X420', 575, 445, array( 'center', 'center'));
-		add_image_size('190X190', 190, 190, array( 'center', 'center'));
+		// single.php
+    add_image_size('685X455', 685, 455, array( 'center', 'center'));
+		// page-treament.php
+		add_image_size('575X420', 575, 445, array( 'center', 'center'));
+		// single-event
 		add_image_size('330Xauto', 330, 'auto', array( 'center', 'center'));
+		// single-doctor.php
 		add_image_size('342X368', 342, 368 , array( 'center', 'center'));
 }
 add_action('after_setup_theme', 'add_custom_sizes');
