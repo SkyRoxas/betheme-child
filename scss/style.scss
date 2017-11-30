@@ -1,8 +1,15 @@
+@import "basic/font";
+
 @import "layout/flex";
 @import "vendors/bootstrap/custom";
 @import "vendors/bootstrap/mixins";
 
-body.single-doctor,body.post-type-archive-tribe_events,body.single-treatment_node,body.single-tribe_events{
+body.single-doctor,
+body.post-type-archive-tribe_events,
+body.single-treatment_node,
+body.single-tribe_events,
+body.post-template-default,
+body.single-portfolio{
   @import "vendors/bootstrap/bootstrap";
   .container{
     box-sizing: border-box;
@@ -18,6 +25,7 @@ body.single-doctor,body.post-type-archive-tribe_events,body.single-treatment_nod
 @import "component/doctor_single";
 @import "component/menu";
 @import "component/searchform";
+@import "component/news_list";
 
 
 body.home{
@@ -81,5 +89,12 @@ body{
     width: 30px;
     background: #418D45;
     margin-top: 15px;
+  }
+}
+
+.color-inherit{
+  color: inherit;
+  a{
+    color: inherit;
   }
 }
