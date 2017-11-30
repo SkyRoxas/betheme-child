@@ -129,7 +129,7 @@ add_action( 'user_register', 'bonze_tml_user_register' );
 
 function bonze_get_portfilio_category($atts)
 {
-		$markup;
+		$markup='';
 		$terms = get_terms( array(
     	'taxonomy' => 'portfolio-types',
     	'hide_empty' => false,
@@ -150,7 +150,7 @@ add_shortcode('portfilio-category', 'bonze_get_portfilio_category');
 
 function bonze_get_event_category($atts)
 {
-		$markup;
+		$markup='';
 		$terms = get_terms( array(
     	'taxonomy' => 'event',
     	'hide_empty' => false,
@@ -170,7 +170,7 @@ function bonze_get_event_category($atts)
 add_shortcode('event-category', 'bonze_get_event_category');
 
 function bonze_get_event_posts($atts) {
-	$markup;
+	$markup='';
 
 	$args = [
 		'posts_per_page' => 2,
@@ -192,7 +192,7 @@ function bonze_get_event_posts($atts) {
 								</div>
 			</div>';
 		}
-
+		wp_reset_postdata();
 	return $markup;
 }
 
