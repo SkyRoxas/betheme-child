@@ -46,6 +46,14 @@
 <!-- body -->
 <body <?php body_class(); ?>>
 
+	<div id="header-top">
+		<div class="wrap">
+			<?php get_search_form()?>
+			<?php wp_nav_menu( array( 'menu' => 'submenu','container_class' => 'menu-submenu menu' ) ); ?>
+		</div>
+	</div>
+
+ <div class="layout-boxed">
 	<?php do_action( 'mfn_hook_top' ); ?>
 
 	<?php get_template_part( 'includes/header', 'sliding-area' ); ?>
