@@ -1,0 +1,49 @@
+body {
+  .my-login-form {
+    width: 100%;
+    max-width: 300px;
+
+    .view-mode-1 {
+      label {
+        font-weight: 700;
+      }
+
+      input {
+        width: 100%;
+        border: 1px solid #C6C6C5;
+        box-sizing: border-box;
+        padding: 15px 5px;
+        margin: 0;
+      }
+    }
+
+    a {
+      vertical-align: middle;
+      color: #575756;
+      font-weight: 700;
+    }
+
+    ul.tml-action-links {
+      margin: 0;
+    }
+  }
+
+  .login-menu {
+    border-top: 2px solid #C6C6C5;
+
+    a {
+      vertical-align: middle;
+      color: #575756;
+      font-weight: 700;
+    }
+  }
+
+  .tml-submit-wrap {
+    background-color: #C6C6C5!important;
+
+    input {
+      color: #C6C6C5!important;
+      border: none!important;
+    }
+  }
+}

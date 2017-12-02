@@ -9,7 +9,9 @@ body.post-type-archive-tribe_events,
 body.single-treatment_node,
 body.single-tribe_events,
 body.post-template-default,
-body.single-portfolio{
+body.single-portfolio,
+body.page-id-395,
+body.page-id-393{
   @import "vendors/bootstrap/bootstrap";
   .container{
     box-sizing: border-box;
@@ -19,6 +21,7 @@ body.single-portfolio{
 @import "pages/page";
 @import "layout/layout";
 @import "layout/sidbar";
+@import "component/theme_my_login";
 @import "component/doctor_list";
 @import "component/treatment_list";
 @import "component/tribeevents_list";
