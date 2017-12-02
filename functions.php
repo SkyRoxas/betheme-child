@@ -197,3 +197,18 @@ function bonze_get_event_posts($atts) {
 }
 
 add_shortcode('event-posts', 'bonze_get_event_posts');
+
+
+function bonze_register_widgets_init() {
+
+    register_sidebar( array(
+        'name'          => 'bonze_theme-my-login',
+        'id'            => 'bonze_theme-my-login',
+        'before_widget' => '<div class ="widget-item">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+
+}
+add_action( 'widgets_init', 'bonze_register_widgets_init' );

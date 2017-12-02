@@ -1,8 +1,9 @@
 //page-id-9 關於診所
 //page-id-13 醫師列表
-//
+//page-id-393 會員登入
+//page-id-395 會員註冊
 
-body:not(.home,.page-id-9,.page-id-13,.single-treatment_node,.single-doctor){
+body:not(.home,.page-id-9,.page-id-13,.single-treatment_node,.single-doctor,.page-id-395,.page-id-393){
   #Content{
     background-image: url('/wp-content/themes/betheme-child/images/bg-01.png');
     background-color: #fff;
