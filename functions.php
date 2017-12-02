@@ -197,3 +197,68 @@ function bonze_get_event_posts($atts) {
 }
 
 add_shortcode('event-posts', 'bonze_get_event_posts');
+
+/**
+ * Defines alternative titles for various event views.
+ *
+ * @param  string $title
+ * @return string
+ */
+function bonze_change_event_title( $title ) {
+	// Single events
+	if ( tribe_is_event() && is_single() ) {
+		// $title = 'Single event page';
+	}
+	// Single venues
+	elseif ( tribe_is_venue() ) {
+		// $title = 'Single venue page';
+	}
+	// Single organizers
+	elseif ( tribe_is_organizer() && is_single() ) {
+		// $title = 'Single organizer page';
+	}
+	// Month view Page
+	elseif ( tribe_is_month() && !is_tax() ) {
+		// $title = 'Month view page';
+	}
+	// Month view category page
+	elseif ( tribe_is_month() && is_tax() ) {
+		// $title = 'Month view category page';
+	}
+	// List view page: upcoming events
+	elseif ( tribe_is_upcoming() && ! is_tax() ) {
+		$title = '進修與學習';
+	}
+	// List view category page: upcoming events
+	elseif ( tribe_is_upcoming() && is_tax() ) {
+		// $title = 'List view category: upcoming events page';
+	}
+	// List view page: past events
+	elseif ( tribe_is_past() && !is_tax() ) {
+		// $title = 'List view: past events page';
+	}
+	// List view category page: past events
+	elseif ( tribe_is_past() && is_tax() ) {
+		// $title = 'List view category: past events page';
+	}
+
+	// Day view page
+	elseif ( tribe_is_day() && ! is_tax() ) {
+		// $title = 'Day view page';
+	}
+	// Day view category page
+	elseif ( tribe_is_day() && is_tax() ) {
+		// $title = 'Day view category page';
+	}
+
+	return $title;
+}
+
+/**
+ * Modifes the event <title> element.
+ *
+ * Users of Yoast's SEO plugin may wish to try replacing the below line with:
+ *
+ *     add_filter('wpseo_title', 'filter_events_title' );
+ */
+add_filter( 'tribe_get_events_title', 'bonze_change_event_title',999 );

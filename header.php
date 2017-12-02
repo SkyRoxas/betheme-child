@@ -179,7 +179,11 @@
 										// Title
 										if( $title_show ){
 											$title_tag = mfn_opts_get( 'subheader-title-tag', 'h1' );
-											echo '<'. $title_tag .' class="title">'. mfn_page_title() .'</'. $title_tag .'>';
+												if ( tribe_is_event(get_queried_object_id()) && is_single() ) {
+													echo '<'. $title_tag .' class="title">'. get_the_title( get_queried_object_id() ) .'</'. $title_tag .'>';
+												}else {
+													echo '<'. $title_tag .' class="title">'. mfn_page_title() .'</'. $title_tag .'>';
+												}
 										}
 
 										// Breadcrumbs
