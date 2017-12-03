@@ -306,3 +306,61 @@ function bonze_hide_admin_menu() {
 }
 
 add_action('admin_menu', 'bonze_hide_admin_menu',999);
+
+//open content block for VC
+add_filter('content_block_post_type', '__return_true');
+
+//使用 content block 時會被當作一般的 post 被安插其他處理，自己包過來用
+//ref: https://tw.wordpress.org/plugins/custom-post-widget/
+function knockers_custom_post_widget_shortcode($atts) {
+	extract(shortcode_atts(array(
+		'id' => '',
+		'slug' => '',
+		'class' => 'content_block',
+		'suppress_content_filters' => 'yes', //預設不走 the_content 的事件，避免被其他方法給包過
+		'title' => 'no',
+		'title_tag' => 'h3',
+		'only_img' => 'no', //僅輸出特色圖片連結
+	), $atts));
+
+	if ($slug) {
+		$block = get_page_by_path($slug, OBJECT, 'content_block');
+		if ($block) {
+			$id = $block->ID;
+		}
+	}
+
+	$content = "";
+
+	if ($id != "") {
+		$args = array(
+			'post__in' => array($id),
+			'post_type' => 'content_block',
+		);
+
+		$content_post = get_posts($args);
+
+		foreach ($content_post as $post):
+			$content .= '<div class="' . esc_attr($class) . '" id="custom_post_widget-' . $id . '">';
+			if ($title === 'yes') {
+				$content .= '<' . esc_attr($title_tag) . '>' . $post->post_title . '</' . esc_attr($title_tag) . '>';
+			}
+			if ($suppress_content_filters === 'no') {
+				$content .= apply_filters('the_content', $post->post_content);
+			} else {
+				if (has_shortcode($post->post_content, 'content_block') || has_shortcode($post->post_content, 'ks_content_block')) {
+					$content .= $post->post_content;
+				} else {
+					$content .= do_shortcode($post->post_content);
+				}
+			}
+			$content .= '</div>';
+		endforeach;
+	}
+	if ($only_img == "yes") {
+		$featured_image = get_the_post_thumbnail_url($id, 'full');
+		return $featured_image ? $featured_image : $content;
+	}
+	return $content;
+}
+add_shortcode('ks_content_block', 'knockers_custom_post_widget_shortcode');
