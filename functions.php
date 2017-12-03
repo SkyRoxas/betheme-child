@@ -277,3 +277,14 @@ function bonze_register_widgets_init() {
 
 }
 add_action( 'widgets_init', 'bonze_register_widgets_init' );
+
+function bonze_woocommerce_disable_shop_page() {
+    global $post;
+    if (is_shop()){
+		global $wp_query;
+	    $wp_query->set_404();
+	    status_header(404);
+	}
+
+}
+add_action( 'wp', 'bonze_woocommerce_disable_shop_page' );
