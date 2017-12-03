@@ -1,6 +1,6 @@
 <?php
 
-require_once 'kint.php';
+// require_once 'kint.php';
 
 /* ---------------------------------------------------------------------------
  * Child Theme URI | DO NOT CHANGE
@@ -291,7 +291,6 @@ add_action( 'wp', 'bonze_woocommerce_disable_shop_page' );
 
 function bonze_hide_admin_menu() {
 	$roles = wp_get_current_user()->roles;
-
     if ($roles[0]=='shop_manager') {
         // edit.php?post_type=client
 		remove_menu_page( 'edit.php?post_type=client' );
