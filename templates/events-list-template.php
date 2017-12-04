@@ -8,7 +8,7 @@ get_header();
 ?>
 
 <!-- #Content -->
-<div id="Content" class="with_aside">
+<div id="Content" class="with_aside p-3">
 	<div class="content_wrapper clearfix">
 
 		<!-- .sections_group -->

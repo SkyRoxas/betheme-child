@@ -29,7 +29,7 @@ function mfnch_enqueue_styles() {
 	// 	wp_enqueue_style( 'parent-style', get_template_directory_uri() .'/style.css' );		//we don't need this if it's empty
 
 	wp_enqueue_style( 'custom', CHILD_THEME_URI .'/css/style.css' );
-
+	wp_enqueue_script('myscripts', CHILD_THEME_URI . '/js/scripts.js');
 
 
 	// Enqueue the parent rtl stylesheet

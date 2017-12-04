@@ -11,7 +11,7 @@ get_header();
 ?>
 
 <!-- #Content -->
-<div id="Content" class="px-lg-2 py-lg-5" style="box-sizing:border-box;">
+<div id="Content" class="p-5" style="box-sizing:border-box;">
 	<div class="content_wrapper clearfix">
 
 		<!-- .sections_group -->
@@ -68,7 +68,7 @@ get_header();
 								<?php get_field_image('icon_node'); ?>
 							</div>
 							<div class="col">
-								<h3 class="single-title mb-4"><?php the_title();?></h3>
+								<h3 class="single-title mt-2 mb-4"><?php the_title();?></h3>
 								<?php the_content(); ?>
 							</div>
 						</div>

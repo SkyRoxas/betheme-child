@@ -58,7 +58,7 @@ get_header();
 											<?php the_excerpt();?>
 										</div>
 										<div>
-											<a class="more-link" href="<?php print $post_link ?>"><h5>瞭解更多</h5></a>
+											<a class="more-link" href="<?php echo the_permalink();?>"><h5>瞭解更多</h5></a>
 										</div>
 									</div>
 								</div>
