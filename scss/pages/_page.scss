@@ -11,3 +11,13 @@ body:not(.home,.page-id-9,.page-id-13,.single-treatment_node,.single-doctor,.pag
     background-position: left top;
   }
 }
+
+.section-middle{
+  >*{
+    display: flex;
+    align-items: center;
+    >*{
+
+    }
+  }
+}

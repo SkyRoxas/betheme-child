@@ -90068,6 +90068,11 @@ body:not(.home):not(.page-id-9):not(.page-id-13):not(.single-treatment_node):not
   background-position: left top;
 }
 
+.section-middle > * {
+  display: flex;
+  align-items: center;
+}
+
 #header-top {
   position: relative;
   overflow-x: scroll;
@@ -90115,6 +90120,36 @@ body:not(.home):not(.page-id-9):not(.page-id-13):not(.single-treatment_node):not
 
 #Content {
   box-sizing: border-box;
+}
+
+#Footer .widget {
+  text-align: left;
+  color: #fff;
+}
+
+#Footer .widget h4 {
+  font-size: 1.2em;
+  font-weight: normal;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+}
+
+#Footer .widget ul {
+  padding: 0px;
+}
+
+#Footer .widget ul li {
+  list-style-type: none;
+}
+
+#Footer .widget ul li:after {
+  display: none;
+}
+
+#Footer .widget ul li a {
+  background: none;
+  font-size: 1.2em;
+  color: #fff;
 }
 
 div.sidebar {
@@ -90645,32 +90680,32 @@ body.page-template-default .post-title h2 {
   font-size: 2em;
 }
 
-.widget_categories,
-#custom_html-2,
-#custom_html-4,
-#custom_html-6,
-#custom_html-7,
-#custom_html-8 {
+.sidebar .widget_categories,
+.sidebar #custom_html-2,
+.sidebar #custom_html-4,
+.sidebar #custom_html-6,
+.sidebar #custom_html-7,
+.sidebar #custom_html-8 {
   margin-top: 0px;
   border: none;
   text-align: center;
 }
 
-.widget_categories::after,
-#custom_html-2::after,
-#custom_html-4::after,
-#custom_html-6::after,
-#custom_html-7::after,
-#custom_html-8::after {
+.sidebar .widget_categories::after,
+.sidebar #custom_html-2::after,
+.sidebar #custom_html-4::after,
+.sidebar #custom_html-6::after,
+.sidebar #custom_html-7::after,
+.sidebar #custom_html-8::after {
   display: none;
 }
 
-.widget_categories h3,
-#custom_html-2 h3,
-#custom_html-4 h3,
-#custom_html-6 h3,
-#custom_html-7 h3,
-#custom_html-8 h3 {
+.sidebar .widget_categories h3,
+.sidebar #custom_html-2 h3,
+.sidebar #custom_html-4 h3,
+.sidebar #custom_html-6 h3,
+.sidebar #custom_html-7 h3,
+.sidebar #custom_html-8 h3 {
   font-size: 20px !important;
   line-height: 20px !important;
   color: #575756;
@@ -90678,33 +90713,33 @@ body.page-template-default .post-title h2 {
   margin-bottom: 20px;
 }
 
-.widget_categories ul,
-#custom_html-2 ul,
-#custom_html-4 ul,
-#custom_html-6 ul,
-#custom_html-7 ul,
-#custom_html-8 ul {
+.sidebar .widget_categories ul,
+.sidebar #custom_html-2 ul,
+.sidebar #custom_html-4 ul,
+.sidebar #custom_html-6 ul,
+.sidebar #custom_html-7 ul,
+.sidebar #custom_html-8 ul {
   background-color: inherit !important;
   padding: 0px;
   margin: -5px;
 }
 
-.widget_categories ul li,
-#custom_html-2 ul li,
-#custom_html-4 ul li,
-#custom_html-6 ul li,
-#custom_html-7 ul li,
-#custom_html-8 ul li {
+.sidebar .widget_categories ul li,
+.sidebar #custom_html-2 ul li,
+.sidebar #custom_html-4 ul li,
+.sidebar #custom_html-6 ul li,
+.sidebar #custom_html-7 ul li,
+.sidebar #custom_html-8 ul li {
   display: block;
   padding: 5px;
 }
 
-.widget_categories ul li a,
-#custom_html-2 ul li a,
-#custom_html-4 ul li a,
-#custom_html-6 ul li a,
-#custom_html-7 ul li a,
-#custom_html-8 ul li a {
+.sidebar .widget_categories ul li a,
+.sidebar #custom_html-2 ul li a,
+.sidebar #custom_html-4 ul li a,
+.sidebar #custom_html-6 ul li a,
+.sidebar #custom_html-7 ul li a,
+.sidebar #custom_html-8 ul li a {
   background-color: white;
   color: #575756 !important;
   font-size: 18px;
