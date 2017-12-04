@@ -408,3 +408,8 @@ function bonze_user_sortable_columns( $columns ) {
     return $columns;
 }
 add_filter( 'manage_users_sortable_columns', 'bonze_user_sortable_columns' );
+
+add_action( 'after_setup_theme', 'bonze_register_menu' );
+function bonze_register_menu() {
+  register_nav_menu( 'submenu', __( 'Submenu', 'theme-slug' ) );
+}
