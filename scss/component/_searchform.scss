@@ -1,6 +1,8 @@
 #searchform{
   position: relative;
   >.wrap{
+    display: flex;
+    align-items: center;
   }
   .icon_search{
     color: #fff;
@@ -12,10 +14,10 @@
   }
   input.input_search{
     display: none;
-    position: absolute;
-    top:100%;
-    left: auto;
-    z-index: 200;
-    max-width: none;
+    // position: absolute;
+    // top:0px;
+    // left: 100%;
+    // z-index: 200;
+    // max-width: none;
   }
 }

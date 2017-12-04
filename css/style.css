@@ -90093,12 +90093,13 @@ body:not(.home):not(.page-id-9):not(.page-id-13):not(.single-treatment_node):not
   align-items: center;
 }
 
-#header-top ul a {
+#header-top div.menu ul a {
   display: flex;
   color: #fff;
+  padding: 8px 0;
 }
 
-#header-top ul a:before {
+#header-top div.menu ul a:before {
   content: "";
   display: block;
   height: 20px;
@@ -90657,6 +90658,11 @@ body.single-tribe_events .css_tr.tbody .quantity input {
   position: relative;
 }
 
+#searchform > .wrap {
+  display: flex;
+  align-items: center;
+}
+
 #searchform .icon_search {
   color: #fff;
   font-size: 30px;
@@ -90669,11 +90675,6 @@ body.single-tribe_events .css_tr.tbody .quantity input {
 
 #searchform input.input_search {
   display: none;
-  position: absolute;
-  top: 100%;
-  left: auto;
-  z-index: 200;
-  max-width: none;
 }
 
 body.page-template-default .post-title h2 {
