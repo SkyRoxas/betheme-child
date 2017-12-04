@@ -1,6 +1,6 @@
 <?php
 
-// require_once 'kint.php';
+require_once 'kint.php';
 
 /* ---------------------------------------------------------------------------
  * Child Theme URI | DO NOT CHANGE
@@ -393,9 +393,18 @@ add_action('manage_users_custom_column', 'bonze_user_doctor_no_column_content', 
 function bonze_user_doctor_no_column_content($value, $column_name, $user_id)
 {
 	$all_meta_for_user = get_user_meta( $user_id );
-	if ( 'doctor_no' == $column_name and isset($all_meta_for_user['doctor_no']) ) {
-    $doctor_no = $all_meta_for_user['doctor_no'][0];
-    return $doctor_no;
-  }
+	switch ($column_name) {
+        case 'doctor_no' :
+            return get_the_author_meta( 'doctor_no', $user_id );
+            break;
+        default:
+    }
   return $value;
 }
+
+//make the new column sortable
+function bonze_user_sortable_columns( $columns ) {
+    $columns['doctor_no'] = 'doctor_no';
+    return $columns;
+}
+add_filter( 'manage_users_sortable_columns', 'bonze_user_sortable_columns' );
