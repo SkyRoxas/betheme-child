@@ -53,7 +53,7 @@
 		<div class="wrap">
 			<?php get_search_form()?>
 			<div class="wrap">
-				<?php wp_nav_menu( array( 'menu' => 'submenu','container_class' => 'menu-submenu menu' ) ); ?>
+				<?php wp_nav_menu( array( 'menu' => 'submenu','container_class' => 'menu-submenu menu','theme_location'=>'submenu' ) ); ?>
 				<a class="facebook_link"><img src="/wp-content/themes/betheme-child/images/facebook.png"></a>
 			</div>
 		</div>
