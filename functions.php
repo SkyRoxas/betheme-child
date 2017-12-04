@@ -1,6 +1,6 @@
 <?php
 
-// require_once 'kint.php';
+require_once 'kint.php';
 
 /* ---------------------------------------------------------------------------
  * Child Theme URI | DO NOT CHANGE
@@ -381,3 +381,21 @@ function bonze_remove_admin_bar_links() {
 	}
 }
 add_action( 'wp_before_admin_bar_render', 'bonze_remove_admin_bar_links',999 );
+
+add_action('manage_users_columns','bonze_modify_user_columns');
+function bonze_modify_user_columns($column_headers) {
+  unset($column_headers['posts']);
+  $column_headers['doctor_no'] = '醫師證號';
+  return $column_headers;
+}
+
+add_action('manage_users_custom_column', 'bonze_user_doctor_no_column_content', 10, 3);
+function bonze_user_doctor_no_column_content($value, $column_name, $user_id)
+{
+	$all_meta_for_user = get_user_meta( $user_id );
+	if ( 'doctor_no' == $column_name and isset($all_meta_for_user['doctor_no']) ) {
+    $doctor_no = $all_meta_for_user['doctor_no'][0];
+    return $doctor_no;
+  }
+  return $value;
+}
