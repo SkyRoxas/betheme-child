@@ -7,7 +7,7 @@
  * @link http://muffingroup.com
  */
 
-get_header();
+get_header('doctor');
 // require_once 'kint.php';
 ?>
 
@@ -63,7 +63,7 @@ get_header();
 								<?php the_post_thumbnail('342X368'); ?>
 							</div>
 							<div class="col right_wrapper">
-								<h3 class="single-title mb-4"><?php the_title();?></h3>
+								<h2 class="single-title mb-4"><?php the_title();?> 醫師</h2>
 								<?php
 									$education = get_field_object('education');
 									$experience = get_field_object('experience');
