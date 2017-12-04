@@ -51,7 +51,7 @@ $set_venue_apart = apply_filters( 'tribe_events_single_event_the_meta_group_venu
 	<?php do_action( 'tribe_events_single_event_meta_secondary_section_start' ); ?>
 
 	<div class="container p-md-4 p-2 colorbox1">
-		<div class="row">
+		<div class="row no-gutters">
 			<div class="col-md-6 col-12">
 				<div>
 					<?php tribe_get_template_part( 'modules/meta/details' ); ?>
@@ -65,7 +65,7 @@ $set_venue_apart = apply_filters( 'tribe_events_single_event_the_meta_group_venu
 		</div>
 	</div>
 	<div class="container mt-4 p-md-4 p-2 colorbox1">
-			<div class="row">
+			<div class="row no-gutters">
 				<div class="col-md-6 col-12">
 					<?php tribe_get_template_part( 'modules/meta/venue' ); ?>
 				</div>

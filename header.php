@@ -52,7 +52,10 @@
 	<div id="header-top">
 		<div class="wrap">
 			<?php get_search_form()?>
-			<?php wp_nav_menu( array( 'menu' => 'submenu','container_class' => 'menu-submenu menu' ) ); ?>
+			<div class="wrap">
+				<?php wp_nav_menu( array( 'menu' => 'submenu','container_class' => 'menu-submenu menu' ) ); ?>
+				<a class="facebook_link"><img src="/wp-content/themes/betheme-child/images/facebook.png"></a>
+			</div>
 		</div>
 	</div>
 
