@@ -50,7 +50,7 @@ $image_url = get_the_post_thumbnail_url($post,'full');
 wp_reset_postdata();
  ?>
 <!-- body -->
-<body style="background-image: url('<?php is_front_page() ? print $image_url: ''?>')" <?php body_class(); ?>>
+<body style="background-repeat: no-repeat; background-image: url('<?php is_front_page() ? print $image_url: ''?>')" <?php body_class(); ?>>
 
 	<div id="header-top">
 		<div class="wrap">
