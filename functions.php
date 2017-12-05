@@ -1,6 +1,6 @@
 <?php
 
-// require_once 'kint.php';
+require_once 'kint.php';
 
 /* ---------------------------------------------------------------------------
  * Child Theme URI | DO NOT CHANGE
@@ -412,4 +412,14 @@ add_filter( 'manage_users_sortable_columns', 'bonze_user_sortable_columns' );
 add_action( 'after_setup_theme', 'bonze_register_menu' );
 function bonze_register_menu() {
   register_nav_menu( 'submenu', __( 'Submenu', 'theme-slug' ) );
+}
+
+add_action( 'woocommerce_save_account_details', 'bonze_woocommerce_save_account_details',99 );
+
+function bonze_woocommerce_save_account_details( $user_id ) {
+
+  update_user_meta( $user_id, 'doctor_no', htmlentities( $_POST[ 'account_doctor_no' ] ) );
+
+  $user = wp_update_user( array( 'ID' => $user_id, 'user_url' => esc_url( $_POST[ 'url' ] ) ) );
+
 }
