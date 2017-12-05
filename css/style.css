@@ -1,11 +1,11 @@
 @font-face {
   font-family: hansans;
-  src: url("./font/hansans/SourceHanSans-Normal.ttc");
+  src: url("./font/hansans/SourceHanSansTW-Normal.otf");
 }
 
 @font-face {
   font-family: hanserif;
-  src: url("./font/hanserif/SourceHanSerif-Medium.ttc");
+  src: url("./font/hanserif/SourceHanSerifTW-Medium.otf");
 }
 
 body {
@@ -90089,9 +90089,14 @@ body:not(.home):not(.page-id-9):not(.page-id-13):not(.single-treatment_node):not
 
 #header-top {
   position: relative;
-  overflow-x: scroll;
   background: #3C3C3B;
   padding: 5px;
+}
+
+@media screen and (max-width: 560px) {
+  #header-top {
+    overflow-x: scroll;
+  }
 }
 
 #header-top > .wrap {
