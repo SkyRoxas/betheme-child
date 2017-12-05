@@ -6,6 +6,7 @@
  * @author Muffin group
  * @link http://muffingroup.com
  */
+// require_once "kint.php";
 ?><!DOCTYPE html>
 <?php
 	if( $_GET && key_exists('mfn-rtl', $_GET) ):
@@ -43,8 +44,13 @@
 <?php wp_head(); ?>
 </head>
 
+<?php
+$post = get_post('468');
+$image_url = get_the_post_thumbnail_url($post,'full');
+wp_reset_postdata();
+ ?>
 <!-- body -->
-<body <?php body_class(); ?>>
+<body style="background-image: url('<?php print $image_url;?>')" <?php body_class(); ?>>
 
 	<div id="header-top">
 		<div class="wrap">
