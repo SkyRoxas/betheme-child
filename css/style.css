@@ -90082,9 +90082,18 @@ body:not(.home):not(.page-id-9):not(.page-id-13):not(.single-treatment_node):not
   background-position: left top;
 }
 
+.section-middle {
+  line-height: 2em;
+}
+
 .section-middle > * {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+}
+
+.section-middle .social-link a {
+  margin-right: 10px;
 }
 
 #header-top {
