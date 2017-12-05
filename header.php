@@ -19,9 +19,6 @@
 <!-- head -->
 <head>
 
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/cwtexhei.css">
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/earlyaccess/cwtexfangsong.css">
-
 <!-- meta -->
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <?php

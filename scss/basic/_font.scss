@@ -1,11 +1,24 @@
 // @import url(//fonts.googleapis.com/earlyaccess/cwtexhei.css);
 // @import url(//fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
 
+@font-face {
+  font-family: hansans;
+  src: url('./font/hansans/SourceHanSansTW-Normal.otf');
+}
+
+@font-face {
+  font-family: hanserif;
+  src: url('./font/hanserif/SourceHanSerifTW-Medium.otf');
+}
+
 body{
-  font-family: 'cwTeXHei', sans-serif!important;
+  font-family: "hansans",sans-serif!important;
   font-weight: lighter;
-  h1,h2{
-    font-family: 'cwTeXFangSong', serif!important;
-    font-weight: 400!important;
+  h1,h2,h4{
+    font-family: "hanserif",sans-serif!important;
+    line-height: 1.2em;
+  }
+  a{
+    font-family: "hansans",sans-serif!important;
   }
 }

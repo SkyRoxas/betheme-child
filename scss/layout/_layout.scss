@@ -1,6 +1,8 @@
 #header-top{
   position: relative;
-  overflow-x: scroll;
+  @media screen and (max-width: 560px) {
+    overflow-x: scroll;
+  }
   background: #3C3C3B;
   padding: 5px;
   >.wrap{
