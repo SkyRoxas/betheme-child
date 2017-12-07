@@ -3,8 +3,20 @@
 Template Name: Events List Template
 Template Post Type: post, page, event
 */
+$user_role = bonze_get_current_user_role();
+$allowed_roles = array('doctor', 'administrator', 'shop_manager');
+if(array_intersect($allowed_roles,$user_role)){
+
+}else{
+	global $wp_query;
+    $wp_query->set_404();
+    status_header(404);
+	include_once( get_query_template( '404' ) );
+	die();
+}
 
 get_header();
+
 ?>
 
 <!-- #Content -->

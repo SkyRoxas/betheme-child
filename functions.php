@@ -423,3 +423,28 @@ function bonze_woocommerce_save_account_details( $user_id ) {
   $user = wp_update_user( array( 'ID' => $user_id, 'user_url' => esc_url( $_POST[ 'url' ] ) ) );
 
 }
+
+function add_helpful_user_classes() {
+    if ( is_user_logged_in() ) {
+        add_filter('body_class','bonze_class_to_body');
+    }
+}
+add_action('init', 'add_helpful_user_classes');
+
+/// Add user role class to front-end body tag
+function bonze_class_to_body($classes) {
+    global $current_user;
+    $user_role = array_shift($current_user->roles);
+    $classes[] = $user_role.' ';
+    return $classes;
+}
+
+function bonze_get_current_user_role() {
+  if( is_user_logged_in() ) {
+    $user = wp_get_current_user();
+    $role = ( array ) $user->roles;
+    return $role[0];
+  } else {
+    return false;
+  }
+ }
