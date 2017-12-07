@@ -290,19 +290,21 @@ function bonze_woocommerce_disable_shop_page() {
 add_action( 'wp', 'bonze_woocommerce_disable_shop_page' );
 
 function bonze_hide_admin_menu() {
-	$roles = wp_get_current_user()->roles;
-    if ($roles[0]=='shop_manager') {
-        // edit.php?post_type=client
-		remove_menu_page( 'edit.php?post_type=client' );
-		remove_menu_page( 'edit.php?post_type=offer' );
-		remove_menu_page( 'edit.php?post_type=slide' );
-		remove_menu_page( 'edit.php?post_type=testimonial' );
-		remove_menu_page( 'edit.php?post_type=layout' );
-		remove_menu_page( 'edit.php?post_type=template' );
-		remove_menu_page( 'tools.php' );
-		remove_menu_page( 'edit-comments.php' );
-		remove_menu_page( 'vc-welcome' );
-    }
+	if(is_admin()){
+		$roles = wp_get_current_user()->roles;
+	    if ($roles[0]=='shop_manager') {
+	        // edit.php?post_type=client
+			remove_menu_page( 'edit.php?post_type=client' );
+			remove_menu_page( 'edit.php?post_type=offer' );
+			remove_menu_page( 'edit.php?post_type=slide' );
+			remove_menu_page( 'edit.php?post_type=testimonial' );
+			remove_menu_page( 'edit.php?post_type=layout' );
+			remove_menu_page( 'edit.php?post_type=template' );
+			remove_menu_page( 'tools.php' );
+			remove_menu_page( 'edit-comments.php' );
+			remove_menu_page( 'vc-welcome' );
+	    }
+	}
 }
 
 add_action('admin_menu', 'bonze_hide_admin_menu',999);
@@ -366,19 +368,22 @@ function knockers_custom_post_widget_shortcode($atts) {
 add_shortcode('ks_content_block', 'knockers_custom_post_widget_shortcode');
 
 function bonze_remove_admin_bar_links() {
-    global $wp_admin_bar;
-	$roles = wp_get_current_user()->roles;
-	if ($roles[0]=='shop_manager') {
-		$wp_admin_bar->remove_menu('updates');          // Remove the updates link
-        $wp_admin_bar->remove_menu('comments');         // Remove the comments link
-        $wp_admin_bar->remove_menu('new-content');      // Remove the content link
-        $wp_admin_bar->remove_menu('w3tc');             // If you use w3 total cache remove the performance link
-        $wp_admin_bar->remove_menu('my-account');       // Remove the user details tab
-		$wp_admin_bar->remove_menu('wp-logo');
-		$wp_admin_bar->remove_menu('tribe-events');
-		$wp_admin_bar->remove_menu('search');
-		$wp_admin_bar->remove_menu('revslider');
+	if(is_admin()){
+		global $wp_admin_bar;
+		$roles = wp_get_current_user()->roles;
+		if ($roles[0]=='shop_manager') {
+			$wp_admin_bar->remove_menu('updates');          // Remove the updates link
+	        $wp_admin_bar->remove_menu('comments');         // Remove the comments link
+	        $wp_admin_bar->remove_menu('new-content');      // Remove the content link
+	        $wp_admin_bar->remove_menu('w3tc');             // If you use w3 total cache remove the performance link
+	        $wp_admin_bar->remove_menu('my-account');       // Remove the user details tab
+			$wp_admin_bar->remove_menu('wp-logo');
+			$wp_admin_bar->remove_menu('tribe-events');
+			$wp_admin_bar->remove_menu('search');
+			$wp_admin_bar->remove_menu('revslider');
+		}
 	}
+
 }
 add_action( 'wp_before_admin_bar_render', 'bonze_remove_admin_bar_links',999 );
 
