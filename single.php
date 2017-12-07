@@ -12,7 +12,7 @@ get_header();
 
 <!-- #Content -->
 <div id="Content">
-	<div class="content_wrapper clearfix p-5">
+	<div class="content_wrapper clearfix">
 
 		<!-- .sections_group -->
 		<div class="sections_group">

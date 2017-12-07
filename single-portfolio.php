@@ -15,7 +15,7 @@ if( get_post_meta( get_the_ID(), 'mfn-post-template', true ) == 'builder' ) $cla
 
 <!-- #Content -->
 <div id="Content" class="<?php echo $class; ?>">
-	<div class="content_wrapper clearfix p-5">
+	<div class="content_wrapper clearfix">
 
 		<!-- .sections_group -->
 		<div class="sections_group">
