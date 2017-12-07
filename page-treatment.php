@@ -55,7 +55,7 @@ get_header();
 											</h3>
 										</div>
 										<div style="margin-bottom:15px;">
-											<?php the_excerpt();?>
+											<?php echo wp_trim_words( get_the_content(), 120, '...' );?>
 										</div>
 										<div>
 											<a class="more-link" href="<?php echo the_permalink();?>"><h5>瞭解更多</h5></a>
