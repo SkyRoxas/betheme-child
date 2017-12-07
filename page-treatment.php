@@ -42,7 +42,7 @@ get_header();
 							?>
 
 							<article class="d-flex <?php echo $even_odd_class;?>">
-								<div class="wrap col col-md-5 d-flex align-items-center" style="padding:10px 50px; box-sizing:border-box;">
+								<div class="wrap col col-md-5 d-flex align-items-center" style="padding:25px 50px; box-sizing:border-box;">
 									<div>
 										<div class="d-flex align-items-end" style="margin-bottom:30px;">
 											<a href="<?php the_permalink();?>">
