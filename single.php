@@ -15,7 +15,7 @@ get_header();
 	<div class="content_wrapper clearfix">
 
 		<!-- .sections_group -->
-		<div class="sections_group">
+		<div class="sections_group px-3">
 			<?php  if( get_post_meta( get_the_ID(), 'mfn-post-template', true ) == 'builder' ):?>
 					<?php
 					$single_post_nav = array(
