@@ -152,7 +152,7 @@ function bonze_get_event_category($atts)
 {
 		$markup='';
 		$terms = get_terms( array(
-    	'taxonomy' => 'event',
+    	'taxonomy' => 'tribe_events_cat',
     	'hide_empty' => false,
 		));
 
