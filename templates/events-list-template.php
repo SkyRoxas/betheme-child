@@ -20,7 +20,7 @@ get_header();
 ?>
 
 <!-- #Content -->
-<div id="Content" class="with_aside p-3">
+<div id="Content" class="with_aside">
 	<div class="content_wrapper clearfix">
 
 		<!-- .sections_group -->
