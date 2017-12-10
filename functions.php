@@ -232,7 +232,10 @@ function bonze_change_event_title( $title ) {
 	}
 	// List view category page: upcoming events
 	elseif ( tribe_is_upcoming() && is_tax() ) {
-		// $title = 'List view category: upcoming events page';
+		$term = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') );
+		$trem_name=$term->name;
+
+		$title = '進修與學習 › '.$trem_name;
 	}
 	// List view page: past events
 	elseif ( tribe_is_past() && !is_tax() ) {
