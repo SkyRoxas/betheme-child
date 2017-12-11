@@ -106,6 +106,9 @@ function bonze_tml_registration_errors( $errors ) {
 		$errors->add( 'empty_phone', '<strong>錯誤</strong>: 請輸入你的電話' );
 	}
 
+	if ( empty( $_POST['user_doctor_no'] ) ){
+		$errors->add( 'empty_phone', '<strong>錯誤</strong>: 請輸入醫師證號' );
+	}
 	return $errors;
 }
 add_filter( 'registration_errors', 'bonze_tml_registration_errors' );
