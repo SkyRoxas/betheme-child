@@ -269,14 +269,25 @@ add_filter( 'tribe_get_events_title', 'bonze_change_event_title',999 );
 
 function bonze_register_widgets_init() {
 
-    register_sidebar( array(
+    register_sidebar(
+			array(
         'name'          => 'bonze_theme-my-login',
         'id'            => 'bonze_theme-my-login',
         'before_widget' => '<div class ="widget-item">',
         'after_widget'  => '</div>',
         'before_title'  => '<h2 class="widget-title">',
         'after_title'   => '</h2>',
-    ) );
+    	));
+
+			register_sidebar(
+				array(
+	        'name'          => 'bonze_theme-headertop',
+	        'id'            => 'bonze_theme-headertop',
+	        'before_title'  => '<h2 class="widget-title">',
+	        'after_title'   => '</h2>',
+	    	));
+
+
 
 }
 add_action( 'widgets_init', 'bonze_register_widgets_init' );

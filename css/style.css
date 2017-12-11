@@ -90138,6 +90138,7 @@ body:not(.home):not(.page-id-9):not(.page-id-13):not(.single-treatment_node):not
 }
 
 #header-top .facebook_link {
+  display: block;
   width: 25px;
   height: 25px;
   margin-left: 10px;
@@ -90193,6 +90194,28 @@ div.sidebar .widget-area {
 div.sidebar .widget-area > * {
   padding: 0px;
   margin-bottom: 26px;
+}
+
+.language-select {
+  padding: 0px;
+  margin: 0px 10px;
+  display: block;
+  max-width: 105px;
+  background-image: url("../images/arrow.png");
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-size: 13px auto;
+  background-position: 97% center;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+
+.language-select select {
+  margin: 0px;
+  border: none;
+  padding: 5px 15px;
+  text-align: center;
+  color: #2D6D2B;
 }
 
 body .my-login-form {
