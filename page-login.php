@@ -16,6 +16,12 @@ get_header();
 		<!-- .sections_group -->
 		<div class="sections_group">
 			<div class="entry-content p-5" itemprop="mainContentOfPage">
+				<div id="message"></div>
+				<script type="text/javascript">
+					if(location.search === "?pending=approval"){
+						document.getElementById('message').innerHTML = '<h4 class="text-center text-success" style="margin-bottom:100px; line-height:50px;">恭喜您註冊完成 ! </br> 待管理員審核通過後，即可進行登入</h4>'
+					}
+				</script>
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-12 d-flex justify-content-center mb-5">
