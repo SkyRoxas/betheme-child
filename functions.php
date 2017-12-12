@@ -118,8 +118,8 @@ add_filter( 'registration_errors', 'bonze_tml_registration_errors' );
  * @param  int   $user_id new register user id
  */
 function bonze_tml_user_register( $user_id ) {
-	if ( !empty( $_POST['name'] ) ){
-		update_user_meta( $user_id, 'first_name', sanitize_text_field($_POST['name']) );
+	if ( !empty( $_POST['user_name'] ) ){
+		update_user_meta( $user_id, 'first_name', sanitize_text_field($_POST['user_name']) );
 	}
 	if ( !empty( $_POST['phone'] ) ){
 		update_user_meta( $user_id, 'billing_phone', sanitize_text_field($_POST['phone']) );

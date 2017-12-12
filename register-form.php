@@ -14,8 +14,8 @@ Theme My Login will always look in your theme's directory first, before using th
 				<input type="text" name="user_doctor_no" id="user_doctor_no<?php $template->the_instance(); ?>" class="input" value="<?php $template->the_posted_value('user_doctor_no'); ?>" size="20" tabindex="20" />
 			</p>
 			<p>
-				<label for="name<?php $template->the_instance(); ?>"><?php _e('姓名 *', 'theme-my-login') ?></label>
-				<input type="text" name="name" id="name<?php $template->the_instance(); ?>" class="input" value="<?php $template->the_posted_value('name'); ?>" size="20" tabindex="20" />
+				<label for="user_name<?php $template->the_instance(); ?>"><?php _e('姓名 *', 'theme-my-login') ?></label>
+				<input type="text" name="user_name" id="name<?php $template->the_instance(); ?>" class="input" value="<?php $template->the_posted_value('user_name'); ?>" size="20" tabindex="20" />
 			</p>
 
 			<p>
