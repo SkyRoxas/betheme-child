@@ -98,7 +98,7 @@ add_filter( 'theme_page_templates', 'bonze_page_templates' );
  * @return array          change error message
  */
 function bonze_tml_registration_errors( $errors ) {
-	if ( empty( $_POST['name'] ) ){
+	if ( empty( $_POST['user_name'] ) ){
 		$errors->add( 'empty_name', '<strong>錯誤</strong>: 請輸入你的姓名' );
 	}
 
