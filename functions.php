@@ -1,6 +1,6 @@
 <?php
 
-// require_once 'kint.php';
+require_once 'kint.php';
 
 /* ---------------------------------------------------------------------------
  * Child Theme URI | DO NOT CHANGE
@@ -260,6 +260,7 @@ function bonze_change_event_title( $title ) {
 
 	return $title;
 }
+
 
 /**
  * Modifes the event <title> element.

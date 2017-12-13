@@ -129,7 +129,7 @@ wp_reset_postdata();
 									}
 
 									$translate['search-results'] = mfn_opts_get('translate') ? mfn_opts_get('translate-search-results','results found for:') : __('results found for:','betheme');
-									echo '<h1 class="title">'. $total_results .' '. $translate['search-results'] .' '. esc_html( $_GET['s'] ) .'</h1>';
+									echo '<h1 class="title">關於 "'. esc_html( $_GET['s'] ) .'" '. $translate['search-results'] .' "'. $total_results .'" 筆</h1>';
 
 								echo '</div>';
 							echo '</div>';
