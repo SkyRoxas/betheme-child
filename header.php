@@ -128,8 +128,8 @@ wp_reset_postdata();
 										$total_results = 0;
 									}
 
-									$translate['search-results'] = mfn_opts_get('translate') ? mfn_opts_get('translate-search-results','results found for:') : __('results found for:','betheme');
-									echo '<h1 class="title">關於 "'. esc_html( $_GET['s'] ) .'" '. $translate['search-results'] .' "'. $total_results .'" 筆</h1>';
+									$translate['search-results'] = mfn_opts_get('translate') ? mfn_opts_get('translate-search-results','的搜尋結果有') : __('的搜尋結果有','betheme');
+									echo '<h1 class="title">關於 "'. esc_html( $_GET['s'] ) .'" '. '的結果有' .' "'. $total_results .'" 筆</h1>';
 
 								echo '</div>';
 							echo '</div>';
