@@ -1,6 +1,6 @@
 <?php
 
-require_once 'kint.php';
+// require_once 'kint.php';
 
 /* ---------------------------------------------------------------------------
  * Child Theme URI | DO NOT CHANGE
