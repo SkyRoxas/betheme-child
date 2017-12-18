@@ -98,7 +98,6 @@ wp_reset_postdata();
 				<?php if( mfn_header_style( true ) != 'header-creative' ) get_template_part( 'includes/header', 'top-area' ); ?>
 				<?php if( mfn_header_style( true ) != 'header-below' ) echo mfn_slider(); ?>
 			</header>
-
 			<?php
 				if( ( mfn_opts_get('subheader') != 'all' ) &&
 					( ! get_post_meta( mfn_ID(), 'mfn-post-hide-title', true ) ) &&
@@ -176,6 +175,13 @@ wp_reset_postdata();
 							$breadcrumbs_link = 'no-link';
 						}
 
+						// Breadcrumbs
+						if( $breadcrumbs_show ){
+							bcn_display();
+							// if ( function_exists('yoast_breadcrumb') ) {
+							// 		yoast_breadcrumb('<p style="margin-top:60px;" id="breadcrumbs">','</p>');
+							// 	}
+						}
 
 						// Subheader | Print
 						if( $subheader_show ){
@@ -207,11 +213,6 @@ wp_reset_postdata();
 												} else{
 													echo '<'. $title_tag .' class="title">'. mfn_page_title() .'</'. $title_tag .'>';
 												}
-										}
-
-										// Breadcrumbs
-										if( $breadcrumbs_show ){
-											mfn_breadcrumbs( $breadcrumbs_link );
 										}
 
 									echo '</div>';
