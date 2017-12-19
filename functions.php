@@ -493,3 +493,8 @@ function bonze_get_current_user_role() {
  	return $new_links;
 
  }
+// 更改前往商店的連結
+ function bonze_cart_redirect_url() {
+ 	return '/training-list';
+ }
+ add_filter( 'woocommerce_return_to_shop_redirect', 'bonze_cart_redirect_url' );
