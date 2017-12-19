@@ -462,6 +462,7 @@ function bonze_class_to_body($classes) {
     return $classes;
 }
 
+//取得當前使用者角色
 function bonze_get_current_user_role() {
   if( is_user_logged_in() ) {
     $user = wp_get_current_user();
@@ -470,4 +471,25 @@ function bonze_get_current_user_role() {
   } else {
     return false;
   }
+ }
+
+ add_filter ( 'woocommerce_account_menu_items', 'bonze_remove_my_account_links' );
+ function bonze_remove_my_account_links( $menu_links ){
+
+ 	// unset( $menu_links['edit-address'] ); // Addresses
+ 	// unset( $menu_links['dashboard'] ); // Dashboard
+ 	// unset( $menu_links['payment-methods'] ); // Payment Methods
+ 	// unset( $menu_links['orders'] ); // Orders
+ 	// unset( $menu_links['downloads'] ); // Downloads
+ 	// unset( $menu_links['edit-account'] ); // Account details
+ 	// unset( $menu_links['customer-logout'] ); // Logout
+
+	$new_links = array(
+		'edit-account'=>'會員資料更新',
+		'orders'=>'訂購課程',
+		'customer-logout'=>'登出',
+	);
+
+ 	return $new_links;
+
  }
