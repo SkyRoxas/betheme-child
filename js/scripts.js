@@ -35,7 +35,7 @@
     }
 
     setTimeout(()=> {
-      menu_item_hover('.menu_wrapper ul', 'li', '.current-menu-item');
+      menu_item_hover('#menu > ul', 'li', '.current-menu-item');
     },500);
   })
 })(jQuery)
