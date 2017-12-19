@@ -98,7 +98,6 @@ wp_reset_postdata();
 				<?php if( mfn_header_style( true ) != 'header-creative' ) get_template_part( 'includes/header', 'top-area' ); ?>
 				<?php if( mfn_header_style( true ) != 'header-below' ) echo mfn_slider(); ?>
 			</header>
-
 			<?php
 				if( ( mfn_opts_get('subheader') != 'all' ) &&
 					( ! get_post_meta( mfn_ID(), 'mfn-post-hide-title', true ) ) &&
@@ -176,6 +175,13 @@ wp_reset_postdata();
 							$breadcrumbs_link = 'no-link';
 						}
 
+						// Breadcrumbs
+						if( $breadcrumbs_show ){
+							bcn_display();
+							// if ( function_exists('yoast_breadcrumb') ) {
+							// 		yoast_breadcrumb('<p style="margin-top:60px;" id="breadcrumbs">','</p>');
+							// 	}
+						}
 
 						// Subheader | Print
 						if( $subheader_show ){
@@ -188,14 +194,25 @@ wp_reset_postdata();
 											$title_tag = mfn_opts_get( 'subheader-title-tag', 'h1' );
 												if ( tribe_is_event(get_queried_object_id()) && is_single() ) {
 													echo '<'. $title_tag .' class="title">'. get_the_title( get_queried_object_id() ) .'</'. $title_tag .'>';
-												}else {
+												}else if(is_single()) {
+
+													if(get_post_type() == 'post'){
+														$terms = get_the_terms( $post->ID , 'category');
+														foreach ($terms as $key => $term){
+															echo '<'. $title_tag .' class="title">'. $term ->name .'</'. $title_tag .'>';
+														}
+													}else if(get_post_type() == 'portfolio'){
+														$terms = get_the_terms( $post->ID , 'portfolio-types');
+														foreach ($terms as $key => $term){
+															echo '<'. $title_tag .' class="title">'. $term ->name .'</'. $title_tag .'>';
+														}
+													}else{
+														echo '<'. $title_tag .' class="title">'. mfn_page_title() .'</'. $title_tag .'>';
+													}
+
+												} else{
 													echo '<'. $title_tag .' class="title">'. mfn_page_title() .'</'. $title_tag .'>';
 												}
-										}
-
-										// Breadcrumbs
-										if( $breadcrumbs_show ){
-											mfn_breadcrumbs( $breadcrumbs_link );
 										}
 
 									echo '</div>';

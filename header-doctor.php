@@ -169,6 +169,13 @@
 							$breadcrumbs_link = 'no-link';
 						}
 
+						// Breadcrumbs
+						if( $breadcrumbs_show ){
+							bcn_display();
+							// if ( function_exists('yoast_breadcrumb') ) {
+							// 		yoast_breadcrumb('<p style="margin-top:60px;" id="breadcrumbs">','</p>');
+							// 	}
+						}
 
 						// Subheader | Print
 						if( $subheader_show ){
@@ -186,10 +193,6 @@
 												}
 										}
 
-										// Breadcrumbs
-										if( $breadcrumbs_show ){
-											mfn_breadcrumbs( $breadcrumbs_link );
-										}
 
 									echo '</div>';
 								echo '</div>';
