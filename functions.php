@@ -1,6 +1,6 @@
 <?php
 
-// require_once 'kint.php';
+require_once 'kint.php';
 
 /* ---------------------------------------------------------------------------
  * Child Theme URI | DO NOT CHANGE
@@ -498,3 +498,5 @@ function bonze_get_current_user_role() {
  	return '/training-list';
  }
  add_filter( 'woocommerce_return_to_shop_redirect', 'bonze_cart_redirect_url' );
+
+include_once 'bonze_woocommerce_address.php';
