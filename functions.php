@@ -499,4 +499,20 @@ function bonze_get_current_user_role() {
  }
  add_filter( 'woocommerce_return_to_shop_redirect', 'bonze_cart_redirect_url' );
 
+ add_action( 'init', 'bonze_disable_custom_type_search', 99 );
+ /**
+  * update_my_custom_type
+  *
+  * @author  Joe Sexton <joe@webtipblog.com>
+  */
+ function bonze_disable_custom_type_search() {
+ 	global $wp_post_types;
+
+ 	if ( post_type_exists( 'tribe_events' ) ) {
+
+ 		// exclude from search results
+ 		$wp_post_types['tribe_events']->exclude_from_search = true;
+ 	}
+ }
+
 include_once 'bonze_woocommerce_address.php';
