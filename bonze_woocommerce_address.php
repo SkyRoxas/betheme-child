@@ -11,7 +11,6 @@ function mxp_remove_default_useless_fields($fields) {
 add_filter('woocommerce_default_address_fields', 'mxp_remove_default_useless_fields', 999, 1);
 
 function mxp_custom_override_my_account_billing_fields($fields) {
-    $fields['billing_first_name']['class'][0]='form-row-wide';
 	$fields['billing']['billing_company_tax_id'] = array(
 		'label' => __('公司統編', 'mxp-wc-checkout-fields-custom'),
 		'placeholder' => _x('公司統編', 'placeholder', 'mxp-wc-checkout-fields-custom'),
@@ -76,14 +75,14 @@ function mxp_custom_override_checkout_fields($fields) {
 		'label' => __('姓名', 'mxp-wc-checkout-fields-custom'),
 		'placeholder' => _x('姓名', 'placeholder', 'mxp-wc-checkout-fields-custom'),
 		'required' => true,
-		'class' => array('form-row-first'),
+		'class' => array('form-row-wide'),
 		'clear' => true,
 	);
 	$fields['shipping']['shipping_first_name'] = array(
 		'label' => __('姓名', 'mxp-wc-checkout-fields-custom'),
 		'placeholder' => _x('姓名', 'placeholder', 'mxp-wc-checkout-fields-custom'),
 		'required' => true,
-		'class' => array('form-row-first'),
+		'class' => array('form-row-wide'),
 		'clear' => true,
 	);
 	$fields['billing']['billing_company'] = array(
