@@ -389,6 +389,7 @@ function bonze_remove_admin_bar_links() {
 	if(is_admin()){
 		global $wp_admin_bar;
 		$roles = wp_get_current_user()->roles;
+
 		if ($roles[0]=='shop_manager') {
 			$wp_admin_bar->remove_menu('updates');          // Remove the updates link
 	        $wp_admin_bar->remove_menu('comments');         // Remove the comments link
@@ -485,6 +486,7 @@ function bonze_get_current_user_role() {
  	// unset( $menu_links['customer-logout'] ); // Logout
 
 	$new_links = array(
+		'dashboard'=>'我的帳號',
 		'edit-account'=>'會員資料更新',
 		'orders'=>'訂購課程',
 		'customer-logout'=>'登出',
@@ -509,9 +511,11 @@ function bonze_get_current_user_role() {
  	global $wp_post_types;
 
  	if ( post_type_exists( 'tribe_events' ) ) {
+		if (!is_user_logged_in()) {
+			// exclude from search results
+	 		$wp_post_types['tribe_events']->exclude_from_search = true;
+		}
 
- 		// exclude from search results
- 		$wp_post_types['tribe_events']->exclude_from_search = true;
  	}
  }
 
