@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<li class="woocommerce-OrderUpdate comment note">
 			<div class="woocommerce-OrderUpdate-inner comment_container">
 				<div class="woocommerce-OrderUpdate-text comment-text">
-					<p class="woocommerce-OrderUpdate-meta meta"><?php echo date_i18n( __( 'Y F l j, h:ia', 'woocommerce' ), strtotime( $note->comment_date ) ); ?></p>
+					<p class="woocommerce-OrderUpdate-meta meta"><?php echo date_i18n( __( 'Y F j l , h:ia', 'woocommerce' ), strtotime( $note->comment_date ) ); ?></p>
 					<div class="woocommerce-OrderUpdate-description description">
 						<?php echo wpautop( wptexturize( $note->comment_content ) ); ?>
 					</div>
