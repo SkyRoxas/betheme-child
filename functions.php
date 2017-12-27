@@ -31,7 +31,6 @@ function mfnch_enqueue_styles() {
 	wp_enqueue_style( 'custom', CHILD_THEME_URI .'/css/style.css' );
 	wp_enqueue_script('myscripts', CHILD_THEME_URI . '/js/scripts.js');
 
-
 	// Enqueue the parent rtl stylesheet
 	if ( is_rtl() ) {
 		wp_enqueue_style( 'mfn-rtl', get_template_directory_uri() . '/rtl.css' );
@@ -518,5 +517,29 @@ function bonze_get_current_user_role() {
 
  	}
  }
+
+ function my_acf_google_map_api( $api ){
+
+ 	$api['key'] = 'AIzaSyBPrQ-BFDgYML71Qw_yz56lCSBuKvcywoE';
+
+ 	return $api;
+
+ }
+
+ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+ /**
+  * enqueue scripts and styles
+  *
+  */
+
+ function bonze_load_scripts() {
+
+ 	wp_register_script('googlemaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBPrQ-BFDgYML71Qw_yz56lCSBuKvcywoE',null,null,true);
+ 	wp_enqueue_script('googlemaps');
+	wp_enqueue_script( 'map-js', CHILD_THEME_URI . '/js/googlemaps.js' );
+
+ }
+ add_action( 'wp_enqueue_scripts', 'bonze_load_scripts' );
 
 include_once 'bonze_woocommerce_address.php';
