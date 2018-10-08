@@ -25,7 +25,7 @@ if( $back_to_top_class == 'hide' ){
 <?php do_action( 'mfn_hook_content_after' ); ?>
 
 <div id="footer-top">
-	<a  class="btn" href="/contact">Schedule online/Contact us</a>
+	<a  class="btn" href="/contact">线上预约/联络我们</a>
 </div>
 
 <!-- #Footer -->
