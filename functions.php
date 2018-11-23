@@ -60,12 +60,13 @@ function mfnch_textdomain() {
  * --------------------------------------------------------------------------- */
  require_once( get_stylesheet_directory() .'/includes/content-post.php' );
 
+/*2018/10/04 Tommy fix*/
 function excerpt_length_example(){
       return 120;
 }
 
-add_filter( 'excerpt_length', 'excerpt_more_example' );
-
+add_filter('excerpt_length', 'excerpt_length_example' );
+/*end*/
 
 function add_custom_sizes()
 {
